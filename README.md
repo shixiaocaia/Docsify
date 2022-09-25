@@ -10,4 +10,5 @@ Stay foolish，Stay hungry。
 
 - 个人博客：https://shixiaocaia.fun
 - 站点源文件来源：https://docs.mphy.top/#/ 通过删除博主源文件修修改改，主要用于记录，并不想过于折腾。
+- Docsify中文文档：https://docsify.js.org/#/zh-cn/
 
