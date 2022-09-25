@@ -1,0 +1,268 @@
+## 面向对象VS面向过程
+**面向过程**
+
+- 通过分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。
+- 面向过程编程思想的核心：功能分解，自顶向下，逐层细化（程序=数据结构+算法）。
+
+**面向对象**
+
+- 面向对象编程（Object-Oriented Programming）简称 OOP 技术。
+- 常常要使用许多代码模块，每个模块都只提供特定的功能，它们是彼此独立的，这样就增大了代码重用的几率，更加有利于软件的开发、维护和升级。
+## 头文件
+**头文件**
+- C++现在头文件是不加后缀名
+- c语言转换后的，加上前缀c，无扩展名，如cmath
+
+```c++
+//前置声明
+class ostream;
+class complex;
+complex& 
+    _doap1 (complex* ths, const complex& r);
+
+//类声明
+class complex{
+    
+};
+
+//类的定义
+complex:: function
+```
+
+## 三大特性
+
+- 封装
+把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。
+类将成员变量和成员函数封装在类的内部，根据需要设置访问权限，通过成员函数管理内部状态。
+- 继承
+继承所表达的是类之间相关的关系，这种关系使得对象可以继承另外一类对象的特征和能力。
+继承的作用：避免公用代码的重复开发，减少代码和数据冗余。
+- 多态
+多态性可以简单地概括为“一个接口，多种方法”，字面意思为多种形态。程序在运行时才决定调用的函数，它是面向对象编程领域的核心概念。
+
+## ::作用域运算符
+
+作用域运算符可以用来解决局部变量与全局变量的重名问题，即在局部变量的作用域内，可用::对被屏蔽的同名的全局变量进行访问。
+
+## 命名空间
+
+```c++
+//创建命名空间
+//只能在全局中定义，不能还函数体内定义
+namespace A{
+	int a = 10;
+}
+namespace B{
+	int a = 20;
+}
+void test(){
+	cout << "A::a : " << A::a << endl;
+	cout << "B::a : " << B::a << endl;
+}
+
+//命名空间可嵌套命名空间
+namespace A{
+	int a = 10;
+	namespace B{
+		int a = 20;
+	}
+}
+void test(){
+	cout << "A::a : " << A::a << endl;
+	cout << "A::B::a : " << A::B::a << endl;
+}
+
+
+//用途1
+//解决命名冲突问题，可以存放常量、变量、函数、结构、枚举、类和对象等等
+//例如不同头文件中，函数命名相同，调用时定义重复出错
+//声明和实现可分离
+namespace LOL{
+    void goArk();
+}
+void LOL::goArk(){
+    cout<<"LOL攻击实现"
+}
+//调用时实现
+LOL::goArk;
+
+
+//无名命名空间，意味着命名空间中的标识符只能在本文件内访问，相当于给/这个标识符加上了static，使得其可以作为内部连接
+namespace{
+	
+	int a = 10;
+	void func(){ cout << "hello namespace" << endl; }
+}
+void test(){
+	cout << "a : " << a << endl;
+	func();
+}
+
+//命名空间起别名
+namespace shortName = verylongName;
+```
+
+## using使用
+
+```c++
+//using 声明
+namespace A{
+	int paramA = 20;
+	int paramB = 30;
+	void funcA(){ cout << "hello funcA" << endl; }
+	void funcB(){ cout << "hello funcA" << endl; }
+}
+
+void test(){
+	//1. 通过命名空间域运算符
+	cout << A::paramA << endl;
+	A::funcA();
+	//2. using声明
+	using A::paramA;
+	using A::funcA;
+	cout << paramA << endl;
+	//cout << paramB << endl; //不可直接访问
+	funcA();
+	//3. 同名冲突
+	//int paramA = 20; //相同作用域注意同名冲突
+}
+
+//using 编译指令
+#include "c++head"
+namespace A {
+	int paramA = 20;
+	int paramB = 30;
+	void funcA() { cout << "hello funcA" << endl; }
+	void funcB() { cout << "hello funcB" << endl; }
+}
+
+void test01() {
+	using namespace A; //声明使用是A空间内的
+	cout << paramA << endl;
+	cout << paramB << endl;
+	funcA();
+	funcB();
+
+	//不会产生二义性
+	int paramA = 30;
+    //如果在这边声明，会导致二义性，就近原则和using namespace A 发生冲突。
+	cout << paramA << endl;
+}
+
+int main()
+{
+	test01();  
+    return 0;
+}
+
+namespace B{
+	int paramA = 20;
+	int paramB = 30;
+	void funcA(){ cout << "hello funcA" << endl; }
+	void funcB(){ cout << "hello funcB" << endl; }
+}
+
+void test02(){
+	using namespace A;
+	using namespace B;
+	//二义性产生，不知道调用A还是B的paramA
+	//cout << paramA << endl;
+    cout<<A::paramA<<endl;//避免二义性
+}
+```
+
+**const分配内存情况**
+
+- 通过变量间接赋值会分配内存空间
+- 对于自定数据类型，比如类对象，那么也会分配内存
+- c中const默认为外部连接，c++中const默认为内部连接
+- 上面两种情况意味着可以通过指针修改对应地址下的Key
+
+**尽量用const 代替define**
+
+- const有类型，可进行编译器类型安全检查。#define无类型，不可进行类型检查。
+
+- const有作用域，而#define不重视作用域，默认定义处到文件结尾。如果定义在指定作用域下有效的常量，那么#define就不能用。
+
+## 引用
+
+```
+
+## 引用
+
+**指针的引用**
+
+实际应用：用一级指针的引用代替二级指针
+
+使用指针的指针
+
+```c++
+void func(int **p)
+{
+    *p = &m_value;
+
+    // 也可以根据你的需求分配内存
+    *p = new int;
+    **p = 5;
+}
+
+int main(int argc, char *argv[])
+{
+    int n = 2;
+    int *pn = &n;
+    cout << *pn << endl;
+    func(&pn);
+    cout << *pn <<endl;
+    return 0;
+}
+
+//p：  是一个指针的指针，在这里我们不会去对它做修改，否则会丢失这个指针指向的指针地址
+//*p:  是被指向的指针，是一个地址。如果我们修改它，修改的是被指向的指针的内容。换句话说，我们修改的是main（）方法里 *pn指针
+//**p: 两次解引用是指向main()方法里*pn的内容
+```
+
+指针的引用
+
+```c++
+int m_value = 1;
+
+void func(int *&p)
+{
+    p = &m_value;
+
+    // 也可以根据你的需求分配内存
+    p = new int;
+    *p = 5;
+}
+
+int main(int argc, char *argv[])
+{
+    int n = 2;
+    int *pn = &n;
+    cout << *pn << endl;
+    func(pn);
+    cout << *pn <<endl;
+    return 0;
+}
+```
+
+看一下func(int *&p)方法
+
+- p:  是指针的引用，main()方法里的 *pn
+- *p:是main()方法里的pn指向的内容。
+
+**常量的引用**
+
+使用场景：用来修饰形参
+
+```c++
+void showValue(const int &val){
+    cout<<val<<endl;
+}
+```
+
+**注意事项**
+
+- 函数的返回值如果是引用，可以作为左值。
+- C++中对于变量类型要求更加严格，因此需要各种强转。
+

@@ -1,0 +1,595 @@
+**函数模板（泛型编程）**
+
+```c++
+template<class T>//告诉编译器，T是一个通用的类型 或者用class替换typename,只限于当下的
+void mySwap(T &a, T &b){
+    T tmp;
+    a = b;
+    b =tmp;
+}
+//会根据传入a,b,类型，就行自动推导
+
+mySwap<int>(a,b)  //显示指定类型，优先用这个
+```
+
+不能进行隐式类型转换（传入参数自动转化为形参类型）
+
+如果出现重载，优先使用普通函数调用。如果想强制使用，通过空参数列表调用，`mySwap<>(a,b)`
+
+函数模板可以发生重载。
+
+如果函数模板可以产生更好的匹配，优先调用函数模板。
+
+**函数模板缺陷**
+
+第一个版本不能直接判断Person判断，通过自定义数据类型来判断。
+
+```c++
+template<class T>
+bool myCompare( T &a , T &b )
+{
+	if ( a == b)
+	{
+		return true;
+	}
+	return false;
+}
+
+// 通过第三代具体化自定义数据类型，解决上述问题
+// 如果具体化能够优先匹配，那么就选择具体化
+// 语法  template<> 返回值  函数名<具体类型>(参数) 
+template<> bool myCompare<Person>(Person &a, Person &b)
+{
+	if ( a.m_Age  == b.m_Age)
+	{
+		return true;
+	}
+
+	return false;
+}
+```
+
+**类模板**
+
+注释：类模板不支持自定识别类型，但可以有默认类型，对比函数模板。
+
+```c++
+template <class NameType, class AgeType = int> //类模板可以有默认类型
+class Person
+{
+public:
+	Person(NameType name, AgeType age)
+	{
+		this->m_Name = name;
+		this->m_Age = age;
+	}
+
+	void showPerson()
+	{
+		cout << "姓名：" << this->m_Name << " 年龄： " << this->m_Age << endl;
+	}
+
+	NameType m_Name;
+	AgeType m_Age;
+};
+void test01()
+{
+	//自动类型推导 ，类模板 不支持
+	//Person p("孙悟空", 100);
+
+	//显示指定类型
+	Person<string, int> p("孙悟空", 100);
+	p.showPerson();
+}
+```
+
+```c++
+//1  指定传入类型
+void doWork( Person<string ,int> & p ) 
+{
+	p.showPerson();
+}
+
+void test01()
+{
+	Person <string, int> p("MT",10);
+	doWork(p);
+}
+
+//2 参数模板化
+template<class T1 ,class T2>
+void doWork2(Person<T1, T2> & p)
+{
+	//如何查看类型
+	cout << typeid(T1).name() << endl;
+	cout << typeid(T2).name() << endl;
+	p.showPerson();
+}
+void test02()
+{
+	Person <string, int> p("呆贼", 18);
+
+	doWork2(p);
+}
+
+
+//3 整体模板化
+template<class T>
+void doWork3(T&p)
+{
+	cout << typeid(T).name() << endl;
+	p.showPerson();
+}
+```
+
+类模板中成员函数不会直接创建，只有在调用时才会。
+
+**类模板中的继承**
+
+```c++
+//基类是模板类时，子类继承必须告知T的类型，显示或者使用模板告知
+template<class T1,class T2>
+class Clid: public Base<T2>
+```
+
+**类模板的类外实现函数**
+
+```c++
+template<class T1,class T2>
+Person<T1,T2>::Person(T1 name,T2 age){//构造
+    this->m_age = age;
+    ...
+}
+template<class T1,class T2>//成员函数
+void Person<T1,T2>::show(){
+    cout<<this->m_age;
+}
+
+```
+
+**类模板的分文件编写**
+
+由于类模板中成员函数在编译时不会创建，链接不到，需要直接引入类的`.cpp文件`。
+
+实际中类模板的函数定义实现在一个文件中，后缀名改为`.hpp文件`
+
+**友元函数结合类模板**
+
+在类内实现，区别之前的全局实现。
+
+如果要想在全局实现:
+
+```c++
+template<class T1, class T2>class Person;//声明person类
+template<class T1,class T2>void printPerson(Person<T1,T2> & p);//告知编译器有这样一个友元函数
+
+//类中还要加函数声明，利用空参数列表
+friend void printPerson<>(Person<T1,T2> &p);
+```
+
+**类型转换—静态类型**（static_cast)
+
+`//static_cast使用   static_cast<目标类型>(原始对象)`
+
+```c++
+//基础类型
+
+void test01()
+{
+	char a = 'a';
+
+	double d = static_cast<double>(a);
+
+	cout << "d = " << d <<endl;
+}
+
+//父子之间转换
+class Base{};
+class Child :public Base{};
+class Other{};
+void test02()
+{
+	Base * base = NULL;
+	Child * child = NULL;
+
+	//把base转为 Child*类型 向下  不安全
+	Child * child2 = static_cast<Child*>(base);
+
+	//把child 转为 Base*  向上  安全
+	Base * base2 = static_cast<Base*>(child);
+
+	//转other类型 转换无效 无父子关系
+	//Other * other = static_cast<Other*>(base);
+}
+```
+
+**类型转换—动态类型**（dynamic_cast)
+
+```c++
+void test03()
+{
+	//基础类型不可以转换
+	char c = 'a';
+	//dynamic_cast非常严格，失去精度 或者不安全都不可以转换
+	//double d = dynamic_cast<double>(c);
+
+}
+
+class Base2
+{
+	virtual void func(){};
+};
+class Child2 :public Base2
+{
+	virtual void func(){};
+};
+class Other2{};
+
+void test04()
+{
+	Base2 * base = NULL;
+	Child2 * child = NULL;
+
+	//child转Base2 *  子类转为基类 安全
+	Base2 * base2 = dynamic_cast<Base2*>(child);
+
+
+	//base 转Child2 * 不安全 父转子直接转不可以
+	//Child2 * child2 = dynamic_cast<Child2*>(base);
+
+	//dynamic_cast 如果发生了多态，那么可以让基类转为派生类 ，向下转换
+	Base2 * base3 = new Child2;
+	Child2 * child3 = dynamic_cast<Child2*>(base3);
+
+}
+```
+
+**常量转换**
+
+```c++
+void test05()
+{
+	const int * p = NULL;
+	//取出const
+	int * newp = const_cast<int *>(p);
+
+	int * p2 = NULL;
+	const int * newP2 = const_cast<const int *>(p2);
+
+
+	//不能对非指针 或 非引用的 变量进行转换
+	//const int a = 10;
+	//int b = const_cast<int>(a);
+
+	//引用
+	int num = 10;
+	int &numRef = num;
+
+	const int &numRef2 = static_cast<const int &>(numRef);
+}
+
+//重新解释转换(reinterpret_cast)
+void test06()
+{
+	int a = 10;
+	int * p = reinterpret_cast<int *>(a);
+
+
+	Base * base = NULL;
+	Other * other = reinterpret_cast<Other*>(base);
+
+	//最不安全 ，不推荐
+
+}
+```
+
+**异常的基本处理**
+
+```c++
+int myDevide(int a ,int b)
+{
+	if (b == 0)
+	{
+		//如果b是异常 抛出异常
+		//return -1;
+
+		//throw 1; 抛出int类型异常
+		//throw 3.14; //抛出double类型异常  异常必须处理，如果不处理 就挂掉
+
+		//throw 'a';
+		
+		//栈解旋
+		//从try开始  到 throw 抛出异常之前  所有栈上的对象 都会被释放 这个过程称为栈解旋
+		//构造和析构顺序相反
+		Person p1;
+		Person p2;
+
+
+		throw myException(); //匿名对象
+
+	}
+	return a / b;
+}
+
+
+
+void test01()
+{
+	int a = 10;
+	int b = 0;
+
+	//int ret = myDevide(a, b); //早期如果返回-1 无法区分到底是结果还是异常
+
+	//C++中异常处理
+
+	try //试一试
+	{
+		myDevide(a, b);
+	}
+	catch (int) //捕获异常
+	{
+		cout << "int类型异常捕获" << endl;
+	}
+	catch (double)
+	{
+		//如果不想处理这个异常 ，可以继续向上抛出
+		throw;
+		cout << "double类型异常捕获" << endl;
+	}
+	catch (myException e)
+	{
+		e.printError();
+	}
+	catch (...)
+	{
+		cout << "其他类型异常捕获" << endl;
+	}
+
+}
+
+
+int main(){
+
+	try
+	{
+		test01();
+	}
+	catch (char ) //如果异常都没有处理，那么成员terminate函数，使程序中断
+	{
+		cout << "main 函数中 double类型异常捕获" << endl;
+	}
+	catch (...)
+	{
+		cout << "main函数中 其他类型异常捕获" << endl;
+	}
+	
+
+	system("pause");
+	return EXIT_SUCCESS;
+}
+```
+
+**自定义异常进行捕获**
+
+```c++
+class myException //自定义异常类
+{
+public:
+	void printError()
+	{
+		cout << "自定义的异常" << endl;
+	}
+};
+
+int myDevide(int a ,int b)
+{
+	if (b == 0)
+	{
+		throw myException(); //匿名对象
+	}
+	return a / b;
+}
+void test01()
+{
+	int a = 10;
+	int b = 0;
+    try //试一试
+	{
+		myDevide(a, b);
+	}
+	catch (myException e)
+	{
+		e.printError();
+	}
+	catch (...)
+	{
+		cout << "其他类型异常捕获" << endl;
+	}
+}
+```
+
+**栈解旋**
+
+从try开始  到 throw 抛出异常之前  所有栈上的对象 都会被释放 这个过程称为栈解旋
+
+**异常的接口声明**
+
+```c++
+void func() throw int{
+    
+    throw 1;//只能抛出int
+}
+```
+
+**异常变量的生命周期**
+
+C++ 异常throw抛出一个匿名对象的地址，catch捕获类型为该匿名对象的指针，运行起来的效果是没有执行到catch下的异常输出，对象就已经被释放掉了，当改为抛出匿名对象时，catch处引用接收就不会发生这样的问题。
+
+```c++
+class MyException
+{
+public:
+	MyException()
+	{
+		cout << "MyException的默认构造" << endl;
+	}
+	MyException(const MyException & e)
+	{
+		cout << "MyException的拷贝构造" << endl;
+	}
+ 
+	~MyException()
+	{
+		cout << "MyException的析构调用" << endl;
+	}
+ 
+	void printError()
+	{
+		this->m_A = 100;
+		cout << "error"  << m_A<< endl;
+	}
+ 
+	int m_A;
+ 
+};
+ 
+void doWork()
+{
+	throw  MyException();
+}
+ 
+void test01()
+{
+	try
+	{
+		doWork();
+	}
+	catch (MyException &e)
+	{
+        e->printError();
+		
+		cout << "捕获异常" << endl;
+ 
+		//delete e; //靠自觉 释放对象
+	}
+}
+
+int main(){
+	test01();
+	system("pause");
+	return EXIT_SUCCESS;
+}
+```
+
+**异常的多态**
+
+**使用系统的标准异常**
+
+```c++
+#include <stdexcept>
+class Person
+{
+public:
+	Person(string name, int age)
+	{
+		this->m_Name = name;
+		//年龄做检测
+
+		if (age < 0 || age > 200)
+		{
+			//抛出越界异常
+			//throw  out_of_range("年龄越界了！");
+
+			throw length_error("长度越界");
+		}
+
+	}
+
+
+	string m_Name;
+	int m_Age;
+};
+
+void test01()
+{
+	try
+	{
+		Person p("张三",300);
+	}
+	catch (out_of_range & e)
+	{
+		cout << e.what() << endl;
+	}
+	catch (length_error & e)
+	{
+		cout << e.what() << endl;
+	}
+
+}
+```
+
+**编写自己的异常类**
+
+```c++
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+using namespace std;
+#include <string>
+
+class MyOutOfRangeException:public exception
+{
+
+public:
+
+	MyOutOfRangeException(string errorInfo)
+	{
+		this->m_ErrorInfo = errorInfo;
+	}
+
+	virtual  ~MyOutOfRangeException( )
+	{
+
+	}
+	virtual const char *  what() const
+	{
+		//返回 错误信息
+		//string 转 char *     .c_str()
+		return this->m_ErrorInfo.c_str();
+	}
+	string m_ErrorInfo;
+};
+class Person
+{
+public:
+	Person(string name, int age)
+	{
+		this->m_Name = name;
+		//年龄做检测
+
+		if (age < 0 || age > 200)
+		{
+			throw MyOutOfRangeException( string("我自己的年龄越界异常"));
+		}
+	}
+	string m_Name;
+	int m_Age;
+};
+
+void test01()
+{
+	try
+	{
+		Person p("张三", 300);
+	}
+	catch ( MyOutOfRangeException & e  )
+	{
+		cout << e.what() << endl;
+	}
+}
+```
+
+1. 继承于exception
+
+2. 重写 虚析构  what（）
+3. 内部维护以错误信息 字符串
+4. 构造时候传入 错误信息字符串，what返回这个字符串
