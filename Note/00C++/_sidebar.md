@@ -1,6 +1,6 @@
 * C++ primer 第五版
     * [ch1. 基础课1](Note/00C++/ch01)
-    - [ch4. 基础课2](Note/00C++/ch02)
+    - [ch2. 基础课2](Note/00C++/ch02)
 
     - [ch3. 基础课3](Note/00C++/ch03)
 
