@@ -1,5 +1,5 @@
 * **Python**
-    * [ch01. note1](Note/00DL/ch1)
+    * [ch01. note1](Note/00DL/ch01)
 
 * **深度学习**
     * [ch01. 感知机](Note/00DL/ch10)
