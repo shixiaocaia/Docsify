@@ -42,7 +42,7 @@
 
 **链表的定义**
 
-```c++
+```cpp
 struct ListNode{
     int val; //element
     ListNode *next; //next ptr
@@ -65,7 +65,7 @@ ListNod* head = new ListNode(5);
 
 **新建节点**
 - 初始化一个新的空节点，值为0，指向该节点的指针为Node
-  ```c++
+  ```cpp
   ListNode* Node = new ListNode(0);
 
 ## 数组链表对比
@@ -83,7 +83,7 @@ ListNod* head = new ListNode(5);
 
 **直接删除**
 
-```c++
+```cpp
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
@@ -112,7 +112,7 @@ public:
 
 **创建虚节点统一删除**
 
-```c++
+```cpp
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {

@@ -2,7 +2,7 @@
 
 **函数递归**
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> ans;
@@ -20,7 +20,7 @@ public:
 
 **统一迭代法**
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
@@ -51,7 +51,7 @@ public:
 
 **函数递归**
 
-```c++
+```cpp
 class Solution {
 public:
     void traversal(TreeNode* node, vector<int>& ans){
@@ -70,7 +70,7 @@ public:
 
 **统一迭代法**
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
@@ -101,7 +101,7 @@ public:
 
 **函数递归**
 
-```c++
+```cpp
 class Solution {
 public:
     void traversal(TreeNode* node, vector<int>& ans){
@@ -120,7 +120,7 @@ public:
 
 **统一迭代法**
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
@@ -148,7 +148,7 @@ public:
 ```
 
 **[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)**
-```c++
+```cpp
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {

@@ -15,7 +15,7 @@
 
 [left,right]闭区间版本
 
-```c++
+```cpp
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -40,7 +40,7 @@ public:
 
 [left,right)左闭右开版本
 
-```c++
+```cpp
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -69,7 +69,7 @@ public:
 
 **快慢指针**
 
-```c++
+```cpp
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -88,7 +88,7 @@ public:
 
 **优化**
 
-```c++
+```cpp
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -118,7 +118,7 @@ public:
 
 **例题：**[LC209.最小子串长度](https://leetcode.cn/problems/minimum-size-subarray-sum/)
 
-```c++
+```cpp
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
@@ -140,7 +140,7 @@ public:
 
 ```
 
-```c++
+```cpp
 最小滑窗模板：给定数组 nums，定义滑窗的左右边界 i, j，求满足某个条件的滑窗的最小长度。
 while j < len(nums):
     判断[i, j]是否满足条件
