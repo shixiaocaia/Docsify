@@ -9,7 +9,7 @@
     * [ch7. 排序](Note/01DS/Datestructure/ch07)
 
 * **Leetcode**
-
+    * [ch0. 疑问](Note/01DS/ch0)
     * [ch1. 数组](Note/01DS/ch1)
     * [ch2. 链表](Note/01DS/ch2)
     * [ch3. 哈希表](Note/01DS/ch3)
