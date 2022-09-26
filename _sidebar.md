@@ -1,5 +1,5 @@
 * **清单**
-    * [好用的工具](Other/tool/README)
+    * [好用的工具](Other/README)
     * [Skill Tree](Other/skilltree)
     * [想做的一百件事](Other/todolist)
 * **CS课程**
