@@ -5,7 +5,7 @@
 * **CS课程**
     * [C++](Note/00C++/README)
     * [数据结构与算法](Note/01DS/README)
-    * [计算机网络](Note/01DS/README)
+    * [计算机网络](Note/01CN/README)
     * [操作系统](Note/01OS/README)
     * [计算机组成原理](Note/01CO/README)
 * **深度学习**
