@@ -1,10 +1,3 @@
----
-layout: wiki  # 使用wiki布局模板
-wiki: Operating system # 这是项目名
-title: 学习进程
----
-操作系统是计算机硬件和应用直接一层软件。
-
 **跟着学**
 
 - [ ] [小林图解系统](https://xiaolincoding.com/os/)

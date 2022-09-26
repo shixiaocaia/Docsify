@@ -7,6 +7,7 @@
     * [数据结构与算法](Note/01DS/README)
     * [计算机网络](Note/01DS/README)
     * [操作系统](Note/01OS/README)
+    * [计算机组成原理](Note/01CO/README)
 * **深度学习**
     * [入门学习](Note/00DL/README)
 * **八股文**

@@ -1,3 +1,8 @@
-* **入门学习**
-    * [ch01. 神经网络](Note/00DL/ch01)
+* **Python**
+    * [ch01. note1](Note/00DL/ch1)
+
+* **深度学习**
+    * [ch01. 感知机](Note/00DL/ch10)
+    * [ch02. 神经网络](Note/00DL/ch11)
+    
 
