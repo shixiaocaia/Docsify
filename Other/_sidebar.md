@@ -1,5 +1,6 @@
 * 软件使用笔记
   
+    * [好使的工具](Other/README)
     * [Git](Other/git)
     
 * 人生清单
