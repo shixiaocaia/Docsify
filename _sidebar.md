@@ -1,3 +1,7 @@
+* **清单**
+    * [好用的工具](Other/tool/README)
+    * [Skill Tree](Other/skilltree)
+    * [想做的一百件事](Other/todolist)
 * **CS课程**
     * [C++](Note/00C++/README)
     * [数据结构与算法](Note/01DS/README)
