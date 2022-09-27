@@ -1,3 +1,4 @@
-* **入门学习**
-    * [ch01. 神经网络](Note/DeepLearning/ch01)
+* **深入浅出计算机网络**
+    * [ch01. 概述](Note/01CN/ch01)
+    * [ch02. 物理层](Note/01CN/ch02)
 
