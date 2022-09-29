@@ -20,3 +20,13 @@
      https://www.r2coding.com/#/
 - 个站商店
   https://storeweb.cn/
+
+## 常用的标记emoji符号
+
+⬜todo
+
+✅finish
+
+👉readagain
+
+🆙important
