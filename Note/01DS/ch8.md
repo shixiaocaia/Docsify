@@ -1,3 +1,5 @@
+## 前、中、后、层序遍历
+
 **[144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)**
 
 **函数递归**
@@ -148,6 +150,7 @@ public:
 ```
 
 **[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)**
+
 ```cpp
 class Solution {
 public:
@@ -173,3 +176,24 @@ public:
 };
 ```
 
+---
+
+## 例题
+
+**[226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)**
+
+> 模板题。
+
+**[101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)**
+
+> 二刷错误。没有正确处理空节点情况。
+>
+> 对于基础语法错误，还是要仔细看清楚。
+>
+> 一刷时候取巧用了特殊值标记。
+
+**[104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)**
+
+> 一刷二刷的层次遍历是比较熟悉。
+>
+> 用前序遍历时，注意空节点处理。
