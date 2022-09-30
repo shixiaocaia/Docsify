@@ -197,3 +197,17 @@ public:
 > 一刷二刷的层次遍历是比较熟悉。
 >
 > 用前序遍历时，注意空节点处理。
+
+**[111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)**
+
+> 这题一开始我就按照上面的思路写了一遍，但是忽略了本地中的定义，最小深度是从根节点到最小的叶子节点的最短路径上的节点数量。
+>
+> 所以当某个节点的左节点为空时不代表子树的高度就是1，应该分三类讨论：左节点为空，右节点不为空时为1+ lenr，同理 1 + lenl，如果都不为空时才是 1 + min( lenr, lenl)
+
+**[222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)**
+
+> 模板题。
+
+**[110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)**
+
+> 第一遍，遍历每个节点，判断每一棵子树是否是平衡二叉树。
