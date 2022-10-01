@@ -211,3 +211,16 @@ public:
 **[110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)**
 
 > 第一遍，遍历每个节点，判断每一棵子树是否是平衡二叉树。
+
+**[257. 二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/)**
+
+> 初看的时候想到这是二叉树的前序遍历，遍历叶子节点的路径。
+>
+> 我怎么回退不同的路径呢？其实这题也可以说是回溯题，可以增加path存放遍历答案，再加上终止的条件。
+>
+> 回溯的几个要素：递归函数的参数，递归的终止条件，单层递归的逻辑。
+
+**[404. 左叶子之和](https://leetcode.cn/problems/sum-of-left-leaves/)**
+
+> 简单的遍历题，判断是不是左叶子节点即可。
+
