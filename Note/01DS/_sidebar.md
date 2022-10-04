@@ -18,5 +18,5 @@
     * [ch6. 贪心](Note/01DS/ch6)
     * [ch7. 回溯](Note/01DS/ch7)
     * [ch8. 二叉树](Note/01DS/ch8)
-    * [ch9 动态规划](Note/01DS/ch9)
+    * [ch9. 动态规划](Note/01DS/ch9)
 
