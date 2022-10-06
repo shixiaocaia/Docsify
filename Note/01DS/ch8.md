@@ -256,3 +256,5 @@ public:
 
 > 暴力合并，细分节点的情况。
 
+**700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
+> 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了，
