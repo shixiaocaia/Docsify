@@ -283,3 +283,17 @@ public:
 > 最近遇到的难题。
 >
 > 一个为空，一个不为空，找到了p，那么剩下的q不在为空的子树里，肯定是p作为了祖先jie'dian
+
+**[235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)**
+> 二叉搜索树是上面的一种，同样可以直接遍历到底。
+>
+> 如何利用二叉搜索树的特性：在答案肯定存在的前提下，且节点有序，那么可以从上向下查找。
+>
+> 如果当前的值大于二者，那么肯定在左节点，如果小于二者肯定都在右节点。否则就是找到了节点了。
+
+**[701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/)**
+> 找到空节点插入即可。
+
+**[669. 修剪二叉搜索树](https://leetcode.cn/problems/trim-a-binary-search-tree/)**
+
+> 重做。
