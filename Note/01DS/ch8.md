@@ -256,5 +256,30 @@ public:
 
 > 暴力合并，细分节点的情况。
 
-**700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
-> 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了，
+**[700.二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
+
+> 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了。
+
+**[98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)**
+
+> 一刷错在，左子树上每一个点都是小于根节点上的值，右子树上每一个点都是大于根节点上的值。
+>
+> 关键一个知识点：二叉搜索树的中序遍历是一个有序序列。、
+
+**[530. 二叉搜索树的最小绝对差](https://leetcode.cn/problems/minimum-absolute-difference-in-bst/)**
+
+> 前提又是二叉搜索树，那么模仿上一题我们同样可以知道，最小的插值肯定连续的两个数，中序一遍序列然后遍历即可。
+>
+> result初始值可以设置为` INT_MAX`。
+
+**[501. 二叉搜索树中的众数](https://leetcode.cn/problems/find-mode-in-binary-search-tree/)**
+
+> 暴力遍历。
+>
+> 考虑中序遍历的有序性，相同的数连续出现，那我们可以用一个pre记录前驱节点，来判断相同count++，否则判断和前面的大小关系，比前面的大前面的答案都失效了，相同的众数可以放进去。
+
+**[236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)**
+
+> 最近遇到的难题。
+>
+> 一个为空，一个不为空，找到了p，那么剩下的q不在为空的子树里，肯定是p作为了祖先jie'dian

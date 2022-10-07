@@ -2,6 +2,7 @@
   
     * [好使的工具](Other/README)
     * [Git](Other/git)
+    * [markdown](Other/markdown)
 * 人生清单
 
     * [技能树](Other/skilltree)
