@@ -1,1 +1,1 @@
-- [神经网络学习](Note/DeepLearning/ch01)
+- [神经网络学习](DeepLearning/ch01)

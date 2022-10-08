@@ -297,3 +297,21 @@ public:
 **[669. 修剪二叉搜索树](https://leetcode.cn/problems/trim-a-binary-search-tree/)**
 
 > 重做。
+>
+> 二刷：还是没做出来。
+>
+> 递归三要素，一遇到空节点我们返回值，二单层的递归逻辑是当前的值小于low，那只能去右节点找一个合适的节点放入当前的位置（二叉搜索树，右子树更小），如果大于high，那么去左子树找一个合适的节点放入。
+>
+> 接下来要将下一层处理完左子树的结果赋给root->left，处理完右子树的结果赋给root->right。
+>
+> 最后返回root节点。
+
+**[108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)**
+
+> Link到106如何构造一棵二叉树。
+
+**[538. 把二叉搜索树转换为累加树](https://leetcode.cn/problems/convert-bst-to-greater-tree/)**
+
+> 能想到用中序遍历转换为有序序列求值，但是没有想到如何处理，实际上反中序遍历，然后添加值即可。
+>
+> 加一个pre记录前置值。
