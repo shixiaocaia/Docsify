@@ -277,19 +277,24 @@ public:
 > 暴力遍历。
 >
 > 考虑中序遍历的有序性，相同的数连续出现，那我们可以用一个pre记录前驱节点，来判断相同count++，否则判断和前面的大小关系，比前面的大前面的答案都失效了，相同的众数可以放进去。
+>
+> 与前置变量相关的，考虑使用一个中间变量。
 
-**[236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)**
+**[🆙236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)**
 
 > 最近遇到的难题。
 >
-> 一个为空，一个不为空，找到了p，那么剩下的q不在为空的子树里，肯定是p作为了祖先jie'dian
+> 一个为空，一个不为空，找到了p，那么剩下的q不在为空的子树里，肯定是p作为了祖先节点。
+>
+> 如果从左子树找，右子树找都找到了，那么当前的节点肯定是最近的公共祖先。
 
-**[235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)**
+**[🆙235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)**
+
 > 二叉搜索树是上面的一种，同样可以直接遍历到底。
 >
 > 如何利用二叉搜索树的特性：在答案肯定存在的前提下，且节点有序，那么可以从上向下查找。
 >
-> 如果当前的值大于二者，那么肯定在左节点，如果小于二者肯定都在右节点。否则就是找到了节点了。
+> 如果当前的值大于二者，那么肯定在左节点，如果小于二者肯定都在右节点。否则就是找到了节点了，因为root->val 在[ p , q ]之间的话，p，q肯定在这之下。
 
 **[701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/)**
 > 找到空节点插入即可。
