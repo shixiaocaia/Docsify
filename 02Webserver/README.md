@@ -27,6 +27,12 @@ q: 不保存文件并退出vi 编辑
 
 touch a.txt 创建一个txt文档
 man 2/3   查看手册
+```
 
+```shell
+int main(argc, char *argv[])
+
+argc 是命令行总的参数个数
+argv[] 是argc个参数，其中第0个参数是程序的全名，以后的参数命令行后面跟的用户输入的参数
 ```
 
