@@ -68,3 +68,46 @@
 > 开始行驶，移动 j。若发现当前剩余汽油小于 0，说明当前 i 作为起点不符合要求，我们将起点 i 循环左移，并且更新剩余汽油，直至剩余汽油是非负数。
 >
 > 当行驶过的加油站数量达到 n 时，结束。判断此时的剩余汽油是否非负，是则返回当前的 i 作为答案；否则返回 −1，表示无解。
+
+```cpp
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        //从每个点作为起点出发
+        for(int i = 0; i < gas.size(); i++){
+            int tank = 0; //剩余油量
+            int count = 0; //经过了几个加油站
+            int current = i; //当前位置
+            while(count < gas.size()){
+                tank += gas[current]; //add oil
+                if(tank < cost[current]) break; // cant go to next
+                tank -= cost[current]; // go to next 
+                current = (current + 1)% gas.size(); // loop the oil
+                if(++count == gas.size()) return i;
+            }
+            // 执行完上述的while循环以后
+            // 1. current < i 时候说明终点小于起点位置，已经i后面的几种情况不用遍历了
+            // 2. 其他情况下，current目前处于无法前往的下一站，在这之前到达此站一定是tank >= 0 情况，所以从i 到curent之间的加油站肯定无法作为起始站点
+            //    毕竟早一个站点开始一定多出一部分油量，或者为0
+            if(current < i) break;
+            else i = current;
+        }
+        return -1;
+    }
+};
+```
+
+**[135. 分发糖果](https://leetcode.cn/problems/candy/)**
+
+> Hard。
+>
+> 分两次遍历找寻答案，第一遍前序，第二遍后续。
+>
+> 第一遍保证右边大于左边，第二遍后续遍历才能保证可以使用之前的顺序性。
+>
+> 反向遍历时，保证candy[i] > candy[ i + 1], 取 candy [i] = max(candy[i], candy [ i + 1] + 1), 这样也能保证前序的大小关系。
+
+**[860. 柠檬水找零](https://leetcode.cn/problems/lemonade-change/)**
+
+> 以为有什么特殊贪心，实际就是最优化给20找零的情况，5美元是公用的。
+
