@@ -75,7 +75,121 @@ public:
 };
 ```
 
+## 背包问题
 
+### 01背包问题
+
+1. dp数组及其含义
+
+`dp[i][j]`表示从0-i个物品中任意取重量为j得物品后，最大价值。
+
+2. 确定递推表达式
+
+也就是状态和选择，对于01背包来说，状态就是「背包的容量」和「可选择的物品」。
+
+选择就是「装进背包」或者「不装进背包」。
+
+```cpp
+for 状态1 in 状态1的所有取值：
+    for 状态2 in 状态2的所有取值：
+        for ...
+            dp[状态1][状态2][...] = 择优(选择1，选择2...)
+```
+
+注：下标是从1开始遍历，上一个物品的价值
+
+**不放物品：**不放物品就是当前容量放不下，那么`dp[i][j] = dp[i-1][j]`，相当于和前面的最大值相同。
+
+**放物品**：放物品是由当前不放，和放的最大值决定的。如果当前放了，那么就剩下的空间的最大存放价值为`dp[i-1][j - weight[i]]`，加上当前物品的价值，取最大值。即`dp[i][j] = max(dp[i-1][j], dp[i-1][j - weight[i]] + value[i])`。
+
+3. 初始化dp数组
+
+首先从`dp[i][j]`的定义出发，如果背包容量j为0的话，即`dp[i][0]`，无论是选取哪些物品，背包价值总和一定为0。
+
+由递推表达式可以看出，是由前一个递推出来的，所以最开始的`dp[i-1][j]`，所以最开始的0要`dp[0][...]`需要初始化。
+
+```cpp
+dp[...][0] = 0;
+dp[0][...] = 0;
+
+//大小够存放第一个物品时价值，也是此时的最大值，注意dp数组的含义
+for (int j = weight[0]; j <= bagweight; j++) {
+    dp[0][j] = value[0];
+}
+```
+
+4. 确定遍历顺序
+
+先遍历物品，再遍历背包大小。
+
+```cpp
+// weight数组的大小 就是物品个数
+for(int i = 1; i < weight.size(); i++) { // 遍历物品
+    for(int j = 0; j <= bagweight; j++) { // 遍历背包容量
+        if (j < weight[i]) dp[i][j] = dp[i - 1][j]; 
+        else dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+
+    }
+}
+```
+
+5. 举例推导
+
+### 一维dp 01 背包
+
+1. 确定dp数组（dp table）以及下标的含义
+
+在一维dp数组中，dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]。
+
+2. 确定递推公式
+
+```cpp
+dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+```
+
+3. dp数组如何初始化
+
+dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]，那么dp[0]就应该是0，因为背包容量为0所背的物品的最大价值就是0。
+
+**这样才能让dp数组在递归公式的过程中取的最大的价值，而不是被初始值覆盖了**。
+
+那么我假设物品价值都是大于0的，所以dp数组初始化的时候，都初始为0就可以了。
+
+4. 确定遍历顺序
+
+```cpp
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+	//倒序遍历，才能保证前一个值都后面一个值最优化无影响
+    }
+}
+```
+
+```cpp
+void test_1_wei_bag_problem() {
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+    int bagWeight = 4;
+
+    // 初始化
+    vector<int> dp(bagWeight + 1, 0);
+    for(int i = 0; i < weight.size(); i++) { // 遍历物品
+		cout << "weight:" << weight[i] << endl;
+		for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+			printf("dp[%d]: = %d\n", j, dp[j]);
+		}
+		cout << endl;
+	}
+    cout << dp[bagWeight] << endl;
+}
+
+int main() {
+    test_1_wei_bag_problem();
+	system("pause");
+}
+```
 
 ## 刷题
 
@@ -114,3 +228,14 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >    枚举 j 的时候，是从1开始的。i 是从3开始，这样dp[i - j]就是dp[2]正好可以通过我们初始化的数值求出来。
 
 > 用容器实现初始化，`int dp[n  + 1] = {0}`报错。
+
+**[96. 不同的二叉搜索树](https://leetcode.cn/problems/unique-binary-search-trees/)**
+
+> 做DP应该想到举例子递归后续的关系，才能写出递推关系式。
+>
+> 空树也是二叉搜索树，然后1也很明确，2也很明确，到3的时候就明白了，我以不通的值做节点的情况，左0右2，左1右1，左2右0。到这里子树在划分，就找到了递推关系式。
+
+**[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)**
+
+> 重刷。思考01背包思路
+
