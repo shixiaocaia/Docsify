@@ -195,6 +195,26 @@ int main() {
 }
 ```
 
+### 完全背包
+
+> 有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。**每件物品都有无限个（也就是可以放入背包多次）**，求解将哪些物品装入背包里物品价值总和最大。
+>
+> **完全背包和01背包问题唯一不同的地方就是，每种物品有无限件**。
+
+01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。
+
+而完全背包的物品是可以添加多次的，所以要从小到大去遍历。
+
+```cpp
+// 先遍历物品，再遍历背包
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+    }
+}
+```
+
 ## 刷题
 
 **[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)**
@@ -254,3 +274,9 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 > 进一步分析：要让差值小,两堆石头的重量都要接近sum/2;我们假设两堆分别为A,B,A<sum/2,B>sum/2,若A更接近sum/2,B也相应更接近sum/2
 >
 > 进一步转化：将一堆stone放进最大容量为sum/2的背包,求放进去的石头的最大重量MaxWeight,最终答案即为sum-2*MaxWeight;
+
+**[474. 一和零](https://leetcode.cn/problems/ones-and-zeroes/)**
+
+> 这题本质上还是01背包的问题，可以用`dp[i][j]`表示 i 个 0 和 j 个1 的最大字串个数。
+>
+> 背包的遍历都是从后向前更新的。
