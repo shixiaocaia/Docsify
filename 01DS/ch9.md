@@ -215,6 +215,8 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 }
 ```
 
+纯背包问题，是看能够凑成这个某个，否则要考虑组合还是排列问题，要注意遍历的顺序。
+
 ## 刷题
 
 **[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)**
@@ -280,3 +282,38 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 > 这题本质上还是01背包的问题，可以用`dp[i][j]`表示 i 个 0 和 j 个1 的最大字串个数。
 >
 > 背包的遍历都是从后向前更新的。
+
+**[518. 零钱兑换 II](https://leetcode.cn/problems/coin-change-ii/)**
+
+> dp递推式写错了。
+>
+> 能看出来这是一个完全背包的问题。
+>
+> dp[j]含义是能组合成j金额的方案数，那么dp[j]应该由dp[ j - coins[i]]推出来的。
+>
+> 初始化dp[0] = 1,这样才会对后续产生影响。
+
+**[377. 组合总和 Ⅳ](https://leetcode.cn/problems/combination-sum-iv/)**
+
+> 还是一个完全背包问题。
+>
+> 注意：外包内物品是排列，外物品内包是组合。排列是注重顺序的，组合是不注重的。
+>
+> C++测试用例有两个数相加超过int的数据，所以需要在if里加上dp[i] < INT_MAX - dp[i - num]。
+>
+> 但java就不用考虑这个限制，java里的int也是四个字节吧，也有可能leetcode后台对不同语言的测试数据不一样。
+
+**[322. 零钱兑换](https://leetcode.cn/problems/coin-change/)**
+
+> 完全背包问题。
+>
+> 凑足总额为j - coins[i]的最少个数为dp[j - coins[i]]，那么只需要加上一个钱币coins[i]即dp[j - coins[i]] + 1就是dp[j]（考虑coins[i]）
+>
+> 所以dp[j] 要取所有 dp[j - coins[i]] + 1 中最小的。
+>
+> 递推公式：dp[j] = min(dp[j - coins[i]] + 1, dp[j]);
+>
+> dp[0] 组成0就是需要0个，其他值为了避免被初始值min覆盖，其他应该为INT_MAX。
+
+
+
