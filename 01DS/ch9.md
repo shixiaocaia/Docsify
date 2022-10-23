@@ -217,6 +217,44 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 
 纯背包问题，是看能够凑成这个某个，否则要考虑组合还是排列问题，要注意遍历的顺序。
 
+### 多重背包
+
+> 有N种物品和一个容量为V 的背包。第i种物品最多有Mi件可用，每件耗费的空间是Ci ，价值是Wi 。求解将哪些物品装入背包可使这些物品的耗费的空间 总和不超过背包容量，且价值总和最大。
+
+把多件物品划分成多个重复的单件物品，就变成了01背包问题。
+
+```cpp
+void test_multi_pack() {
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+    vector<int> nums = {2, 3, 2};
+    int bagWeight = 10;
+    for (int i = 0; i < nums.size(); i++) {
+        while (nums[i] > 1) { // nums[i]保留到1，把其他物品都展开
+            weight.push_back(weight[i]);
+            value.push_back(value[i]);
+            nums[i]--;
+        }
+    }
+
+    vector<int> dp(bagWeight + 1, 0);
+    for(int i = 0; i < weight.size(); i++) { // 遍历物品
+        for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+        }
+        for (int j = 0; j <= bagWeight; j++) {
+            cout << dp[j] << " ";
+        }
+        cout << endl;
+    }
+    cout << dp[bagWeight] << endl;
+
+}
+int main() {
+    test_multi_pack();
+}
+```
+
 ## 刷题
 
 **[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)**
@@ -315,5 +353,33 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >
 > dp[0] 组成0就是需要0个，其他值为了避免被初始值min覆盖，其他应该为INT_MAX。
 
+**[279. 完全平方数](https://leetcode.cn/problems/perfect-squares/)**
 
+> 和322一样的思路。
+
+**[139. 单词拆分](https://leetcode.cn/problems/word-break/)**
+
+> 没有想到用哈希表，查找子串出现的问题。
+>
+> 题目中说了单词可以重复使用，也不用全部使用，因此这是一个完全背包问题。
+>
+> 背包的容量就是字符串的长度，物品就是wordDict。
+>
+> 1. 确定dp数组以及下标的含义
+>
+> **dp[i] : 字符串长度为i的话，dp[i]为true，表示可以拆分为一个或多个在字典中出现的单词**。
+>
+> 2. 确定递推公式
+>
+> 如果确定dp[j] 是true，且 [j, i] 这个区间的子串出现在字典里，那么dp[i]一定是true。（j < i ）。
+>
+> 所以递推公式是 if([j, i] 这个区间的子串出现在字典里 && dp[j]是true) 那么 dp[i] = true。
+>
+> 3. dp数组如何初始化
+>
+> 从递归公式中可以看出，dp[i] 的状态依靠 dp[j]是否为true，那么dp[0]就是递归的根基，dp[0]一定要为true，否则递归下去后面都都是false了。
+>
+> 4. 确定遍历顺序
+>
+> 题目中说是拆分为一个或多个在字典中出现的单词，所以这是完全背包。这里应该考虑前后组合的顺序，因此应该先遍历背包再遍历物品。
 
