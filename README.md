@@ -37,70 +37,57 @@ Stay foolish, Stay hungry.
 ⬜研一第一年课程划过
 
 <style>
-  .circle_process {
+body, html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.g-container {
     position: relative;
-    width: 199px;
-    height: 200px;
-  }
-  .circle_process .wrapper {
-    width: 100px;
-    height: 200px;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-  }
-  .circle_process .right {
-    right: 0;
-  }
-  .circle_process .left {
-    left: 0;
-  }
-  .circle_process .circle {
+    margin: auto;
     width: 200px;
     height: 200px;
-    border: 20px solid transparent;
+}
+
+.g-progress {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    box-sizing: border-box;
+    background: conic-gradient(#FFCDB2 0, #FFCDB2 25%, #B5838D 25%, #B5838D);
+    mask: radial-gradient(transparent, transparent 80px, #000 80.5px, #000 0);
+}
+
+.g-circle {
     position: absolute;
     top: 0;
-    transform: rotate(-135deg);
-  }
-  .circle_process .rightcircle {
-    border-top: 20px solid green;
-    border-right: 20px solid green;
-    right: 0;
-    -webkit-animation: circle_right 5s linear infinite;
-  }
-  .circle_process .leftcircle {
-    border-bottom: 20px solid green;
-    border-left: 20px solid green;
     left: 0;
-    -webkit-animation: circle_left 5s linear infinite;
-  }
-  @-webkit-keyframes circle_right {
-    0% {
-      -webkit-transform: rotate(-135deg);
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 90px;
+        left: 90px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #FFCDB2;
+        z-index: 1;
     }
-    50%,
-    100% {
-      -webkit-transform: rotate(45deg);
+    
+    &::before {
+        transform: translate(0, -90px);
     }
-  }
-  @-webkit-keyframes circle_left {
-    0%,
-    50% {
-      -webkit-transform: rotate(-135deg);
+    
+    &::after {
+        transform: rotate(90deg) translate(0, -90px) ;
     }
-    100% {
-      -webkit-transform: rotate(45deg);
-    }
-  }
+}
 </style>
-<div class="circle_process">
-  <div class="wrapper right">
-    <div class="circle rightcircle"></div>
-  </div>
-  <div class="wrapper left">
-    <div class="circle leftcircle" id="leftcircle"></div>
-  </div>
+<div class="g-progress"></div>
+<div class="g-container">
+    <div class="g-progress"></div>
+    <div class="g-circle"></div>
 </div>
