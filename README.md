@@ -26,68 +26,20 @@ Stay foolish, Stay hungry.
 
 🍳最近在做点什么呢
 
-⬜C++ primer + 侯捷老师课程
+<p>
+    <label for="file">C++ primer：</label>
+    <progress max="100" value="60"> 60% </progress>
+</p>
+<p>
+    <label for="file">深入浅出计网：</label>
+    <progress max="100" value="60"> 60% </progress>
+</p>
+<p>
+    <label for="file">Webserver：</label>
+    <progress max="100" value="30"> 60% </progress>
+</p>
+<p>
+    <label for="file">度过研一课程  </label>
+    <progress max="100" value="28"> 60% </progress>
+</p>
 
-⬜深入浅出计算机网络
-
-⬜牛客Webserver项目学习
-
-⬜三维模型轻量化处理学习
-
-⬜研一第一年课程划过
-
-<style>
-body, html {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.g-container {
-    position: relative;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-.g-progress {
-    position: relative;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: conic-gradient(#FFCDB2 0, #FFCDB2 25%, #B5838D 25%, #B5838D);
-    mask: radial-gradient(transparent, transparent 80px, #000 80.5px, #000 0);
-}
-
-.g-circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: 90px;
-        left: 90px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #FFCDB2;
-        z-index: 1;
-    }
-    
-    &::before {
-        transform: translate(0, -90px);
-    }
-    
-    &::after {
-        transform: rotate(90deg) translate(0, -90px) ;
-    }
-}
-</style>
-<div class="g-progress"></div>
-<div class="g-container">
-    <div class="g-progress"></div>
-    <div class="g-circle"></div>
-</div>
