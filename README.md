@@ -35,3 +35,72 @@ Stay foolish, Stay hungry.
 ⬜三维模型轻量化处理学习
 
 ⬜研一第一年课程划过
+
+<style>
+  .circle_process {
+    position: relative;
+    width: 199px;
+    height: 200px;
+  }
+  .circle_process .wrapper {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+  .circle_process .right {
+    right: 0;
+  }
+  .circle_process .left {
+    left: 0;
+  }
+  .circle_process .circle {
+    width: 200px;
+    height: 200px;
+    border: 20px solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    transform: rotate(-135deg);
+  }
+  .circle_process .rightcircle {
+    border-top: 20px solid green;
+    border-right: 20px solid green;
+    right: 0;
+    -webkit-animation: circle_right 5s linear infinite;
+  }
+  .circle_process .leftcircle {
+    border-bottom: 20px solid green;
+    border-left: 20px solid green;
+    left: 0;
+    -webkit-animation: circle_left 5s linear infinite;
+  }
+  @-webkit-keyframes circle_right {
+    0% {
+      -webkit-transform: rotate(-135deg);
+    }
+    50%,
+    100% {
+      -webkit-transform: rotate(45deg);
+    }
+  }
+  @-webkit-keyframes circle_left {
+    0%,
+    50% {
+      -webkit-transform: rotate(-135deg);
+    }
+    100% {
+      -webkit-transform: rotate(45deg);
+    }
+  }
+</style>
+<div class="circle_process">
+  <div class="wrapper right">
+    <div class="circle rightcircle"></div>
+  </div>
+  <div class="wrapper left">
+    <div class="circle leftcircle" id="leftcircle"></div>
+  </div>
+</div>

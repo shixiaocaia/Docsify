@@ -1,5 +1,4 @@
 git add .
-set /p m= input commit = 
-git commit -m %m%
+git commit -m "daydayup"
 git push origin main
 pause
