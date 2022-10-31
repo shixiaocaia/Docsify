@@ -455,3 +455,21 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 > ```
 >
 > 4. 遍历顺序：从前向后
+
+**[123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)**
+
+> 同上，上一题是k = 2 的特例，最上一题是  k  = 1的特例.
+
+**🆙[309. 最佳买卖股票时机含冷冻期](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)**
+
+> 动态规划法。
+>
+> 设 f1 表示当天买入股票后的最大利润，f2 表示当天卖出股票后的最大利润，f3 表示当天空仓后的最大利润。
+>
+> 初始第 1 天结束时，`f1 = -prices[0]`，`f2 = 0`，`f3 = 0`。
+>
+> 从第 2 天开始，当天结束时：
+>
+> - 若买入，则说明前一天空仓，然后今天买入，`f1 = max(f1, f3 - prices[i])`。
+> - 若卖出，则只能是之前某一天买入，然后今天卖出，`f2 = max(f2, f1 + prices[i])`。
+> - 若空仓，则只能是之前某一天卖出后，然后今天保持空仓，`f3 = max(f3, f2)`。
