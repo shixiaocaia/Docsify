@@ -428,7 +428,7 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 
 **[123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)**
 
-> 1. `dp[i][j]`表示第i天状态j所剩最大现金。，拿到题想到这题有哪些状态，本题中每天的状态（操作）：0. 没有操作 1. 第一次买入 2. 第一次卖出 3. 第二次买入 4. 第二次卖出。
+> 1. `dp[i][j]`表示第i天状态j所剩最大现金。拿到题想到这题有哪些状态，本题中每天的状态（操作）：0. 没有操作 1. 第一次买入 2. 第一次卖出 3. 第二次买入 4. 第二次卖出。
 > 2. 递归公式
 >
 > ```cpp
@@ -473,3 +473,52 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 > - 若买入，则说明前一天空仓，然后今天买入，`f1 = max(f1, f3 - prices[i])`。
 > - 若卖出，则只能是之前某一天买入，然后今天卖出，`f2 = max(f2, f1 + prices[i])`。
 > - 若空仓，则只能是之前某一天卖出后，然后今天保持空仓，`f3 = max(f3, f2)`。
+
+**[714. 买卖股票的最佳时机含手续费](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)**
+
+> 1. `dp[i][j]`表示第i天状态j所剩最大现金，`d[i][0]`表示第i天持有股票所得最多现金（负数） ，`dp[i][1]`表示第i天不持有股票所得最多现金。
+> 2. 递归公式
+>
+> ```cpp
+> dp[i][0] = dp[i-1][1] - prices[i];
+> //前一天有股票，前一天卖完买股票
+> dp[i][1] = dp[i-1][1] + prices[i] - fee;
+> //前一天卖完了，前一天买了今天买再出去fee
+> ```
+>
+> 3. 初始化
+>
+> ```cpp
+> dp[0][0] -= prices[0];
+> dp[0][1] = 0;
+> ```
+>
+> 4. 遍历顺序：从前向后。
+
+**[300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)**
+
+> 1. `dp[i]`表示i之前包括i的以nums[i]结尾最长上升子序列的长度。
+> 2. 递归公式
+>
+> ```cpp
+> for(int i = 1; i < nums.size(); i++){
+>     for(int j = 0; j < i; j++){
+>         if(nums[i] > nums[j]) dp[i] = max(dp[j] + 1, dp[i]);
+>     }
+> ```
+>
+> 比较以nums[i]为结尾的数，是否保证前面的有序性。   
+>
+> 3. 初始化每个数都为1，因为以他本身的数起始，至少为1。
+> 4. 遍历顺序：从前向后。
+>
+> 注意需要不断记录最大值，因为在中间可能会中断，需要更新最大值。
+
+**[674. 最长连续递增序列](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/)**
+
+> 相比上一题，多了一个连续的要求。
+>
+> 可以贪心判断，count ++ ，断连续就重置为1.
+>
+> dp[i]表示以num[i] 为结尾，直接递归判断即可，如果大于就是在上一个基础上+1，否则就是维持本身的大小1即可。
+
