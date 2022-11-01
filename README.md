@@ -42,4 +42,16 @@ Stay foolish, Stay hungry.
     <label for="file">度过研一课程：</label>
     <progress max="100" value="28"> 60% </progress>
 </p>
+<p>
+    <label for="file">代码随想录：</label>
+    <progress max="100" value="70"> 60% </progress>
+</p>
+
+---
+
+🗓️规划
+
+⬜数据库
+
+⬜操作系统
 
