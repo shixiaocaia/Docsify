@@ -522,3 +522,61 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >
 > dp[i]表示以num[i] 为结尾，直接递归判断即可，如果大于就是在上一个基础上+1，否则就是维持本身的大小1即可。
 
+**[718. 最长重复子数组](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/)**
+
+> 和上一题类似，初始化应该都为0，因为可能都不相等。
+
+**🆙[1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)**
+
+> 非连续的最长公共子序列。
+
+**[1035.不相交的线](https://leetcode.cn/problems/uncrossed-lines/)**
+
+> 同上。换汤不换药。
+
+**[53. 最大子序和](https://leetcode.cn/problems/maximum-subarray/description/)**
+
+> 一开始用贪心做，这里是DP。
+
+**[392. 判断子序列](https://leetcode.cn/problems/is-subsequence/description/)**
+
+> 同718，1143的思路，只要判断最长的情况是否等于s的长度，就可以判断是不是子串了。
+
+**[115.不同的子序列](https://leetcode.cn/problems/distinct-subsequences/)**
+
+> 1. `dp[i][j]`：以i-1为结尾的s子序列中出现以j-1为结尾的t的个数为`dp[i][j]`。
+> 1. 递推公式
+>
+> ```cpp
+> //s[i - 1] 与 t[j - 1]相等
+> dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+> //一部分由s[i - 1]匹配，一部分不由s[i - 1]匹配。
+> 
+> //当s[i - 1] 与 t[j - 1]不相等时，dp[i][j]只有一部分组成，不用s[i - 1]来匹配，即：dp[i - 1][j]
+> dp[i][j] = dp[i - 1][j];
+> ```
+>
+> 3. 初始化
+>
+> ```cpp
+> p[i][0]表示什么呢？
+> 
+> dp[i][0] 表示：以i-1为结尾的s可以随便删除元素，出现空字符串的个数。
+> 
+> 那么dp[i][0]一定都是1，因为也就是把以i-1为结尾的s，删除所有元素，出现空字符串的个数就是1。
+> 
+> 再来看dp[0][j]，dp[0][j]：空字符串s可以随便删除元素，出现以j-1为结尾的字符串t的个数。
+> 
+> 那么dp[0][j]一定都是0，s如论如何也变成不了t。
+> 
+> 最后就要看一个特殊位置了，即：dp[0][0] 应该是多少。
+> 
+> dp[0][0]应该是1，空字符串s，可以删除0个元素，变成空字符串t。
+> ```
+>
+> 4. 从前向后
+> 5. 注：答案的溢出问题。
+
+**[583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)**
+
+> 同上面，考虑删除任意一部分，或者二者都删除。如果相等就等于前者，相当于没有操作。
