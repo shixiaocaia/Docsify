@@ -13,8 +13,12 @@
 
 ⬜[小林图解网络](https://xiaolincoding.com/network/)
 
-⬜图解HTTP、TCPIP
+⬜图解HTTP、TCP/IP
 
-## 听课
+---
 
-⬜[湖科大教书匠](https://space.bilibili.com/360996402?spm_id_from=..search-card.all.click)
+## 知轻重
+
+- 网络层：简单了解IPv4、IPv6
+- 传输层：TCP 、 UDP
+- 应用层：HTTP、HTTPS

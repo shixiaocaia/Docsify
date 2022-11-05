@@ -580,3 +580,38 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 **[583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)**
 
 > 同上面，考虑删除任意一部分，或者二者都删除。如果相等就等于前者，相当于没有操作。
+
+**[72. 编辑距离](https://leetcode.cn/problems/edit-distance/)**
+
+> 递推公式:
+>
+> ```cpp
+> word1[i - 1] == word[i - 2];
+> dp[i][j] = dp[i-1][j-1];//not opearte
+> 
+> word1[i - 1] != word[i - 2];
+> dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + 1; //删除word1，或者word2一个字符使之匹配
+> dp[i][j] = dp[i-1][j-1] + 2;//各自删除一个字符使之匹配
+> //删除一个字符等价于增加一个字符
+> 
+> dp[i][j] = dp[i-1][j-1] + 1;//替换一个字符，此时不用增加元素，那么以下标i-2为结尾的word1 与 j-2为结尾的word2的最近编辑距离 加上一个替换元素的操作。
+> ```
+
+**[647. 回文子串](https://leetcode.cn/problems/palindromic-substrings/)**
+
+> 如何判断回文子串：
+>
+> 1. i == j 单个字符肯定是。
+> 2. j - i = 1 aba 也是
+> 3. j- i > 1需要判断[i + 1, j - 1]中间是不是回文子串。
+>
+> 在第三种情况，推出我们需要考虑递归顺序了，应该从下向上，从左到右。
+
+**[516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)**
+
+> `dp[i][j]`表示[i,j]的最长回文串
+>
+> 1. s i == s j时，表示首尾都可以加入，aXXXXa, ans + 2
+> 2. s i != s j 时， aXXXXb,  重新判断 XXXXb，或者aXXXXb的长度
+>
+> 因此这里也要考虑遍历顺序，同上。
