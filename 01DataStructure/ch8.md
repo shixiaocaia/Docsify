@@ -124,3 +124,15 @@ public:
 **[452. 用最少数量的箭引爆气球](https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/)**
 
 > 如果这个气球能被上一箭射中，就跳过，否则 + 1，但是右边界需要不断维护最小的。
+
+**[435. 无重叠区间](https://leetcode.cn/problems/non-overlapping-intervals/description/)**
+
+> 计算去除交叉区间 == 总区间 - 计算不交叉区间
+>
+> 计算不交叉区间，考虑排序判断边界，这里考虑右边界排序，然后从左向右遍历，选择左边界尽可能小的，腾出空间给后面的。
+
+**[763. 划分字母区间](https://leetcode.cn/problems/partition-labels/description/)**
+
+> 本来想的联系上一题，计算每个字母的左右边界，来考虑，发现不可行。
+>
+> 先计算每一个字母的最远边界，然后不断更新一个区间内某个字母的最远位置，当此时下标等于这个区间最远位置字母的位置时，说明这是一个划分区间，再记录下此时的值作为左边界，最后区间长度做差即可得到。
