@@ -12,3 +12,4 @@
 
 ⬜[蓝桥杯操作系统课程实验](https://www.lanqiao.cn/courses/115)
 
+video：up主 九曲阑干
