@@ -47,9 +47,6 @@ Stay foolish, Stay hungry.
     <progress max="100" value="95"> 60% </progress>
 </p>
 
-
-
-
 ---
 
 🗓️规划
@@ -57,4 +54,10 @@ Stay foolish, Stay hungry.
 ⬜数据库
 
 ⬜操作系统
+
+---
+
+📈今年KPI
+
+✅代码随想录一刷
 
