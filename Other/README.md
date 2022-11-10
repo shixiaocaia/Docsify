@@ -1,25 +1,21 @@
 ## Online_tools
-- markdown demo
-     https://markdown-it.github.io/
-- 在线OCR
-  https://pearocr.com/#/
-- 专利文章下载
-  https://www.drugfuture.com/cnpat/cn_patent.asp
-- Z-Library 
-  https://zh.usa1lib.org/?signAll=1&ts=0230
-- 文章修改
-  https://effidit.qq.com/demo
-- 网页icon
-  https://emojicombos.com/area
-- 阿里icon素材
-  https://www.iconfont.cn/
+|     名称     |                       🔗                        |
+| :----------: | :--------------------------------------------: |
+| 专利文章下载 | https://www.drugfuture.com/cnpat/cn_patent.asp |
+|  Z-Library   |                     被查了                     |
+|   文章纠错   |          https://effidit.qq.com/demo           |
 
-## Community
-
-- 🐏计算机路线学习
-     https://www.r2coding.com/#/
-- 个站商店
-  https://storeweb.cn/
+## 常用软件分享
+|       名称       |       作用       |
+| :--------------: | :--------------: |
+|     Onedrive     |   文档文件同步   |
+|     Quicker      |     快捷动作     |
+|      Typora      |     markdown     |
+|    Powertoys     |  微软系统小工具  |
+|      V2ray       |     魔法工具     |
+| Office tool plus | 傻瓜式安装office |
+|   FluentReader   |     RSS订阅      |
+|       geek       |     卸载软件     |
 
 ## 常用的标记emoji符号
 

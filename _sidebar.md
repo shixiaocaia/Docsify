@@ -1,5 +1,6 @@
 * **清单**
   * [趁手工具](Other/README)
+  * [markdown](Other/markdown)
   * [愿望清单](Other/todolist)
 * **CS课程**
   * [C++](00C++/README)
