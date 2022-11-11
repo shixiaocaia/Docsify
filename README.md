@@ -32,20 +32,21 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">深入浅出计网：</label>
-    <progress max="424" value="299"> 60% </progress>
+    <progress max="424" value="303"> 60% </progress>
 </p>
 <p>
     <label for="file">Webserver：</label>
     <progress max="100" value="30"> 60% </progress>
 </p>
 <p>
+    <label for="file">代码随想录二刷：</label>
+    <progress max="100" value="0"> 60% </progress>
+</p>
+<p>
     <label for="file">度过研一课程：</label>
     <progress max="100" value="28"> 60% </progress>
 </p>
-<p>
-    <label for="file">代码随想录：</label>
-    <progress max="100" value="95"> 60% </progress>
-</p>
+
 
 ---
 

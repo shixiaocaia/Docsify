@@ -5,6 +5,7 @@
 |  Z-Library   |                     被查了                     |
 |   文章纠错   |          https://effidit.qq.com/demo           |
 |   阿里icon   |            https://www.iconfont.cn/            |
+|   飞书妙记   |     https://www.feishu.cn/product/minutes      |
 
 ## 常用软件
 |       名称       |       作用       |
