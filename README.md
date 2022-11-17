@@ -32,7 +32,7 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">深入浅出计网：</label>
-    <progress max="424" value="303"> 60% </progress>
+    <progress max="424" value="330"> 60% </progress>
 </p>
 <p>
     <label for="file">Webserver：</label>
