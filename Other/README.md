@@ -6,6 +6,8 @@
 |   文章纠错   |          https://effidit.qq.com/demo           |
 |   阿里icon   |            https://www.iconfont.cn/            |
 |   飞书妙记   |     https://www.feishu.cn/product/minutes      |
+|   Overleaf   |            https://cn.overleaf.com/            |
+|              |                                                |
 
 ## 常用软件
 |       名称       |       作用       |

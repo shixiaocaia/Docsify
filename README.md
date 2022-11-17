@@ -40,13 +40,12 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="100" value="0"> 60% </progress>
+    <progress max="150" value="5"> 60% </progress>
 </p>
 <p>
     <label for="file">度过研一课程：</label>
-    <progress max="100" value="28"> 60% </progress>
+    <progress max="100" value="33"> 60% </progress>
 </p>
-
 
 ---
 
