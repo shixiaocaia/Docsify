@@ -11,6 +11,7 @@
     * [ch8. 贪心](01DataStructure/ch8)
     * [ch9. 动态规划](01DataStructure/ch9)
     * [ch10. 单调栈](01DataStructure/ch10)
+    * [ch11. 排序](01DataStructure/ch11)
 
 * ACM模式
 
