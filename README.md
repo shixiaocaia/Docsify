@@ -36,7 +36,7 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="150" value="5"></progress>
+    <progress max="150" value="10"></progress>
 </p>
 <p>
     <label for="file">现代操作系统：</label>
