@@ -10,11 +10,9 @@
 std::vector<std::string> chessboard(n, std::string(n, '.'));
 ```
 
+> 到后面还是不要直接使用using namepsace std;避免冲突等问题。
 
-
-
-
-
+- 定义变量时，每个变量都应该赋予初值，哪怕是指向为空。
 
 ## 算法逻辑问题
 
