@@ -7,6 +7,7 @@
     * [ch06. 应用层](01ComputerNetwork/ch06)
     * [ch07. 网络安全](01ComputerNetwork/ch07)
 * **HTTP篇**
+    * [ch01. 简单的HTTP协议](01ComputerNetwork/ch11)
 * **TCP篇**
 * **IP篇**
 * **网络综合篇**

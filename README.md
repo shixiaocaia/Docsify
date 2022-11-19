@@ -28,24 +28,29 @@ Stay foolish, Stay hungry.
 
 <p>
     <label for="file">C++ primer：</label>
-    <progress max="790" value="433"> 60% </progress>
+    <progress max="790" value="448"></progress>
 </p>
 <p>
-    <label for="file">深入浅出计网：</label>
-    <progress max="424" value="330"> 60% </progress>
-</p>
-<p>
-    <label for="file">Webserver：</label>
-    <progress max="100" value="30"> 60% </progress>
+    <label for="file">图解HTTP：</label>
+    <progress max="241" value="48"></progress>
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="150" value="5"> 60% </progress>
+    <progress max="150" value="5"></progress>
+</p>
+<p>
+    <label for="file">现代操作系统：</label>
+    <progress max="150" value="0"></progress>
+</p>
+<p>
+    <label for="file">Webserver：</label>
+    <progress max="100" value="30"></progress>
 </p>
 <p>
     <label for="file">度过研一课程：</label>
-    <progress max="100" value="33"> 60% </progress>
+    <progress max="100" value="33"></progress>
 </p>
+
 
 ---
 
@@ -53,11 +58,11 @@ Stay foolish, Stay hungry.
 
 ⬜数据库
 
-⬜操作系统
-
 ---
 
 📈今年KPI
 
 ✅代码随想录一刷
+
+✅深入浅出计网
 
