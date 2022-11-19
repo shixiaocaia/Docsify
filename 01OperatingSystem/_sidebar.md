@@ -1,4 +1,4 @@
-* **[计算机系统概述](01OperatingSystem/ch06)**
+* [**计算机系统概述**](01OperatingSystem/ch06)
 * **硬件结构**
     * [CPU 是如何执行程序的](01OperatingSystem/ch01)
     * [存储器](01OperatingSystem/ch02)
