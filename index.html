@@ -100,6 +100,9 @@
         background-color: #42b983 !important;
         color: #fff !important;
       }
+	  figure {
+      text-align: center
+	  }
     </style>
   </head>
 
@@ -127,6 +130,17 @@
           hideOtherSidebarContent: false,
           namespace: 'docsify-demo'
         },
+		markdown: {
+            renderer: {
+                image: function(href, title, text) {
+                    // 按照原来的渲染 img
+                    var image_html = this.origin.image.apply(this, arguments)
+                    // 用 figure 包一下图片，实现居中
+                    return '<figure>' + image_html + '<figcaption>' + text +
+                        '</figcaption></figure>'
+                }
+            }
+        }
         plugins: [
           function (hook) {
             var footer = [
