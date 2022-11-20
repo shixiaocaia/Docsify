@@ -32,7 +32,7 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">图解HTTP：</label>
-    <progress max="241" value="48"></progress>
+    <progress max="241" value="78"></progress>
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
@@ -50,6 +50,7 @@ Stay foolish, Stay hungry.
     <label for="file">度过研一课程：</label>
     <progress max="100" value="33"></progress>
 </p>
+
 
 
 ---

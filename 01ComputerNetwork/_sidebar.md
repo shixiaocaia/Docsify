@@ -8,6 +8,9 @@
     * [ch07. 网络安全](01ComputerNetwork/ch07)
 * **HTTP篇**
     * [ch01. 简单的HTTP协议](01ComputerNetwork/ch11)
+    * [ch02. HTTP报文信息及状态码](01ComputerNetwork/ch12)
+    * [ch03. 与HTTP协作的Web服务器](01ComputerNetwork/ch12)
+    * [ch04. HTTP首部](01ComputerNetwork/ch13)
 * **TCP篇**
 * **IP篇**
 * **网络综合篇**
