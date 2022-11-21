@@ -247,11 +247,15 @@ while j < len(nums):
 >
 > 1. 维护两个哈希表，一个hs，一个ht。
 > 2. 定义两个指针，左指针j，右指针i，维护一个窗口[i,  j]。
-> 3. 每向右一步，把s[i] 加入hs当中，hs[s[i]] ++
+> 3. 每向右一步，把s[i] 加入hs当中，hs[s[i]] ++。
 > 4. 对于新加入的s[i], 如果`hs[s[i]] <= ht[s[i]]`，说明是必要的，且没超过需求的字符数量，用一个cnt记录一共需要多少个。
-> 5. 当hs[s[j]] > ht[s[j]时，说明hs哈希表中s[j]的数量多于ht哈希表中s[j]的数量，此时我们就需要向右收缩滑动窗口，j++并使hs[s[j]]--，即hs[s[j ++ ]] --。
+> 5. 当hs[s[j]] > ht[s[j]时，说明hs哈希表中s[j]的数量多于ht哈希表中s[j]的数量，此时我们就需要向右收缩滑动窗口，j++并使hs[s[j]]--，即hs[s[j ++ ]] --。每次更新保证这个字符数量是复合要求的，所以不更新cnt的大小。
 > 6. 当`cnt == t.size`时，说明此时滑动窗口包含符串 `t` 的全部字符。我们重复上述过程找到最小窗口即为答案。
 > 7. 更新答案时候保证这是复合字符串t长度的。
+>
+> 三刷：[题解](https://leetcode.cn/problems/minimum-window-substring/solutions/872360/leetcode-76-zui-xiao-fu-gai-zi-chuan-cja-lmqz/)
+
+## 模拟
 
 > [LC59.螺旋矩阵2](https://leetcode.cn/problems/spiral-matrix-ii/)
 >

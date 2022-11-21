@@ -36,11 +36,11 @@ Stay foolish, Stay hungry.
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="150" value="10"></progress>
+    <progress max="11" value="1"></progress>
 </p>
 <p>
     <label for="file">现代操作系统：</label>
-    <progress max="150" value="0"></progress>
+    <progress max="243" value="29"></progress>
 </p>
 <p>
     <label for="file">Webserver：</label>
@@ -50,7 +50,6 @@ Stay foolish, Stay hungry.
     <label for="file">度过研一课程：</label>
     <progress max="100" value="33"></progress>
 </p>
-
 
 
 ---
