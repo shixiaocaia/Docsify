@@ -31,10 +31,6 @@ Stay foolish, Stay hungry.
     <progress max="790" value="448"></progress>
 </p>
 <p>
-    <label for="file">图解HTTP：</label>
-    <progress max="241" value="100"></progress>
-</p>
-<p>
     <label for="file">代码随想录二刷：</label>
     <progress max="11" value="1"></progress>
 </p>
@@ -51,7 +47,6 @@ Stay foolish, Stay hungry.
     <progress max="100" value="33"></progress>
 </p>
 
-
 ---
 
 🗓️规划
@@ -65,4 +60,8 @@ Stay foolish, Stay hungry.
 ✅代码随想录一刷
 
 ✅深入浅出计网
+
+✅图解HTTP
+
+
 

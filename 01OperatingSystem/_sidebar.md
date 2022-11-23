@@ -9,6 +9,8 @@
     * [CPU 如何工作](01OperatingSystem/ch04)
     * [为什么要有虚拟内存](01OperatingSystem/ch05)
 * **内存管理**
+    * [ch01](01OperatingSystem/ch21)
+
 * **进程管理**
 * **文件系统管理**
 * **输入输出设备管理**
