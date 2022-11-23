@@ -5,7 +5,7 @@
     * [ch04. 网络层](01ComputerNetwork/ch04)
     * [ch05. 传输层](01ComputerNetwork/ch05)
     * [ch06. 应用层](01ComputerNetwork/ch06)
-    * [ch07. 网络安全](01ComputerNetwork/ch07)
+    * [ch07. Wireshark](01ComputerNetwork/ch07)
 * **HTTP篇**
     * [常见问题](01ComputerNetwork/ch10)
     * [ch01. 简单的HTTP协议](01ComputerNetwork/ch11)
