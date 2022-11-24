@@ -109,7 +109,7 @@ ListNod* head = new ListNode(5);
 
 > 通过循环判断后两个节点是否为空
 >
-> ![24.两两交换链表中的节点1](D:\Code\Typorapic\202208110712982.png)
+> ![24.两两交换链表中的节点1](http://pic.shixiaocaia.fun/202211240843535.png)
 >
 > 1. 保存后两个节点
 > 2. cur 指向 2 这个节点
@@ -123,6 +123,8 @@ ListNod* head = new ListNode(5);
 > 将fast指针指向删除节点的前一个节点，然后fast指针遍历到NULL时，刚好slow指针遍历到要删除的节点。
 >
 > 同样用哑节点，规避了分类头节点问题。
+>
+> 二刷没想到双指针用法。
 
 **[面试题 02.07. 链表相交](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)**
 

@@ -105,6 +105,10 @@ public:
 
 ## 双向指针
 
+> [!NOTE]
+>
+> 双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。
+
 **例题：**[LC27.移除元素](https://leetcode.cn/problems/remove-element/)
 
 **快慢指针**
@@ -182,6 +186,10 @@ public:
 > 使用双向指针，由于原数组按照非递减排序，那么平方后的数，应该在两头，通过双向指针指向头和尾，进行比较大小移动。
 >
 > 每次比较左边和右边哪个数更大，更新左右边界，用一个k记录ans数组的位置。
+
+**其他章节双指针思路题**
+
+> **[LC19.删除链表的倒数第N个节点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)**
 
 ## 滑动窗口
 
