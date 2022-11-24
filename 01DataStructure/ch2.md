@@ -20,7 +20,7 @@
 
 **循环链表**
 
-<img src="http://pic.shixiaocaia.fun/202208080648608.png" alt="链表4" style="zoom:50%;" />
+<img src="http://pic.shixiaocaia.fun/202208080648608.png" alt="链表4"  />
 
 循环链表，顾名思义，就是链表首尾相连。
 
