@@ -10,6 +10,10 @@
 
 ⬜[九曲阑干](https://space.bilibili.com/354767108/)
 
+⬜[蒋炎岩](https://space.bilibili.com/202224425/video)
+
+⬜[yaangmin](https://space.bilibili.com/4564101/video?tid=0&page=3&keyword=&order=pubdate)
+
 **跟着做**
 
 ⬜[蓝桥杯操作系统课程实验](https://www.lanqiao.cn/courses/115)

@@ -11,9 +11,7 @@
 
 ⬜[小林图解网络](https://xiaolincoding.com/network/)
 
-⬜Wireshark网络分析就是这么简单
-
-⬜Wireshark网络分析的艺术
+⬜[技术蛋](https://space.bilibili.com/327247876/)
 
 ---
 
