@@ -1,4 +1,4 @@
-* **计算机系统概述**
+* **NJU计算机系统基础**
     * [计算机系统概述](01OperatingSystem/ch06)
     * [数据的表示和存储](01OperatingSystem/ch07)
 
@@ -9,9 +9,12 @@
     * [CPU 如何工作](01OperatingSystem/ch04)
     * [为什么要有虚拟内存](01OperatingSystem/ch05)
 * **内存管理**
-    * [ch01](01OperatingSystem/ch21)
+    * [现代操作系统笔记](01OperatingSystem/ch21)
 
 * **进程管理**
 * **文件系统管理**
 * **输入输出设备管理**
 
+- **实验**
+
+  

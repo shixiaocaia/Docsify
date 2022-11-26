@@ -105,7 +105,7 @@ ListNod* head = new ListNode(5);
 >
 > 方法2：双指针
 
-**[LC24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/)**
+**[🆙LC24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/)**
 
 > 通过循环判断后两个节点是否为空
 >
