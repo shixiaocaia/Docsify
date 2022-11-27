@@ -134,9 +134,9 @@ ListNod* head = new ListNode(5);
 >
 > 注意判断交点是**指针相等**，不是数值相等。
 
-**[LC142.环形链表II](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)**
+**[🆙LC142.环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/)**
 
-> 待做，主要是涉及到的数学问题。
+> 主要是涉及到的数学问题。
 >
 > 1. 判断是否有环形
 > 2. 判断环形的入口
