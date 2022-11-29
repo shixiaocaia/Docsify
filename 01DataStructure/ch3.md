@@ -52,27 +52,27 @@
 
 [LC242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)
 
-用数组存储string a中字母出现的次数，遍历string b在a中出现的次数，每出现一次对应-1，最好判断26个字母是否有非0的字母。
-
-关键码：由于字母的特殊性，且全为小写字母，可以使用s[i] - 'a'，作为索引。
+> 用数组存储string a中字母出现的次数，遍历string b在a中出现的次数，每出现一次对应-1，最好判断26个字母是否有非0的字母。
+>
+> 关键码：由于字母的特殊性，且全为小写字母，可以使用s[i] - 'a'，作为索引。
 
 [LC349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)
 
-限制数据范围：数组B中的值在A中寻找是否出现，第一次出现的话加入ans中。O(n^2)。
-
-不限数据范围：使用std::unordered_set，读写效率高，不需要排序，还能去重。
+> 限制数据范围：数组B中的值在A中寻找是否出现，第一次出现的话加入ans中。O(n^2)。
+>
+> 不限数据范围：使用std::unordered_set，读写效率高，不需要排序，还能去重。
 
 [LC350. 两个数组的交集II](https://leetcode.cn/problems/intersection-of-two-arrays-ii/)
 
-同样可以用数组解决。
+> 同样可以用数组解决。
 
 [LC202.快乐数](https://leetcode.cn/problems/happy-number/)
 
-关键词“重复”，联想到哈希表。
-
-思路：如果这个数重复出现过，说明非快乐数，否则遍历到判断为止。、
-
-用`unorder_set<int>`去重。
+> 关键词“重复”，联想到哈希表。
+>
+> 思路：如果这个数重复出现过，说明非快乐数，否则遍历到判断为止。
+>
+> 用`unorder_set<int>`去重。
 
 [LC1.两数之和](https://leetcode.cn/problems/two-sum/)
 
@@ -94,30 +94,30 @@ target = num 1+ num2, 很容易想到遍历一个数，看num2 是否在map当�
 
 [LC383.赎金信](https://leetcode.cn/problems/ransom-note/)
 
-模板题，将字母转为数组下标(ASCII值)，或者用map都可以。
+> 模板题，将字母转为数组下标(ASCII值)，或者用map都可以。
 
 𖤐[LC15.三树之和](https://leetcode.cn/problems/3sum/)
 
-一开始想用哈希表，计算前两个数和，然后判断第三个数是否在map中，出现了error错误Expected member name or ';' after declaration specifiers，放弃了。
+> 一开始想用哈希表，计算前两个数和，然后判断第三个数是否在map中，出现了error错误Expected member name or ';' after declaration specifiers，放弃了。
 
 > Expected member name or ';' after declaration specifiers
 >
 > 这个错误不一定是所指行，可能是前面的符号滥用。
 
-题解版：用双指针维护 + 去重
-
-a, b, c 三个数的去重，是难点。
+> 题解版：用双指针维护 + 去重
+>
+> a, b, c 三个数的去重，是难点。
 
 𖤐[LC18. 四数之和](https://leetcode.cn/problems/4sum/)
 
-对比三数之和，增加了一层外循环。
-
-- 总体思路：用两层for维护最小的两个数，然后双指针维护后面的部分。
-- 第一层for：当前数大于目标值时，并且当前数大于等于0，break。外加 if(i > 0 && nums[i] == nums[i-1]) continue;进行剪枝。在这个数和前一个数大于0的情况下，后续有满足的组合，在前一种必然出现过。
-- 第二层for: 即再上一层基础上初始值时nums[i] + nums[j]进行比较。
-- 双指针同上一题一样进行维护。
-
-LC15和18的剪枝是难点。
+> 对比三数之和，增加了一层外循环。
+>
+> - 总体思路：用两层for维护最小的两个数，然后双指针维护后面的部分。
+> - 第一层for：当前数大于目标值时，并且当前数大于等于0，break。外加 if(i > 0 && nums[i] == nums[i-1]) continue;进行剪枝。在这个数和前一个数大于0的情况下，后续有满足的组合，在前一种必然出现过。
+> - 第二层for: 即再上一层基础上初始值时nums[i] + nums[j]进行比较。
+> - 双指针同上一题一样进行维护。
+>
+> LC15 和18 的剪枝是难点。
 
 ## 对比
 
