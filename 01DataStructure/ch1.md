@@ -189,7 +189,9 @@ public:
 
 **其他章节双指针思路题**
 
-> **[LC19.删除链表的倒数第N个节点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)**
+> [LC19.删除链表的倒数第N个节点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
+>
+> [LC15.三树之和](https://leetcode.cn/problems/3sum/)
 
 ## 滑动窗口
 

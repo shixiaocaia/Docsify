@@ -50,6 +50,10 @@
 
 ## 例题
 
+[LC383.赎金信](https://leetcode.cn/problems/ransom-note/)
+
+> 模板题，将字母转为数组下标(ASCII值)，或者用map都可以。
+
 [LC242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)
 
 > 用数组存储string a中字母出现的次数，遍历string b在a中出现的次数，每出现一次对应-1，最好判断26个字母是否有非0的字母。
@@ -76,25 +80,21 @@
 
 [LC1.两数之和](https://leetcode.cn/problems/two-sum/)
 
-- 为什么会想到用哈希表
-
-target = num 1+ num2, 很容易想到遍历一个数，看num2 是否在map当中，并且
-
-- 哈希表为什么用map
-
-> 要判断一个数出现，同时还要返回这个数的下标，因此需要两个值，使用map的value key可以分别保存。
-
-- 本题map是用来存什么的
-
-> 存储数值中的另一半。最终一定能遍历num时，target - num 在map当中
-
-- map中的key和value用来存什么的
-
-> key 存储 数值，value存储下标。因为题意保证有唯一解，当遍历此时值的另一半不在map中时，添加此时的数值为key，下标为value到map中，直到遍历到另一半已经在map中结束。
-
-[LC383.赎金信](https://leetcode.cn/problems/ransom-note/)
-
-> 模板题，将字母转为数组下标(ASCII值)，或者用map都可以。
+> - 为什么会想到用哈希表
+>
+> target = num 1+ num2, 很容易想到遍历一个数，看num2 是否在map当中，并且
+>
+> - 哈希表为什么用map
+>
+>  要判断一个数出现，同时还要返回这个数的下标，因此需要两个值，使用map的value key可以分别保存。
+>
+> - 本题map是用来存什么的
+>
+>  存储数值中的另一半。最终一定能遍历num时，target - num 在map当中
+>
+> - map中的key和value用来存什么的
+>
+>  key 存储 数值，value存储下标。因为题意保证有唯一解，当遍历此时值的另一半不在map中时，添加此时的数值为key，下标为value到map中，直到遍历到另一半已经在map中结束。
 
 𖤐[LC15.三树之和](https://leetcode.cn/problems/3sum/)
 
@@ -119,22 +119,6 @@ target = num 1+ num2, 很容易想到遍历一个数，看num2 是否在map当�
 >
 > LC15 和18 的剪枝是难点。
 
-## 对比
-
-数组作为哈希表，比如[LC383.赎金信](https://leetcode.cn/problems/ransom-note/)，我们知道明确的数组大小，可以将字母值转化为键值，对比用map，节省了开销。
-
-set作为哈希表，比如[LC349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)， 我们不清楚数组的大小情况，或者值的间隔特别大，会造成空间的浪费。此外数组可以set相比数组还可以去重。
-
-map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)，不仅需要判断key，还要记录位置，将位置作为value记录，
-
-## 例题
-
-**模板题**
-
-[LC383.赎金信](https://leetcode.cn/problems/ransom-note/)
-
----
-
 [LC49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams/)
 
 > 结合例题的[LC242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)。将一个单词的所有字母进行重新排列得到新的单词，那我们可以将每个单词按照一定顺序排列后的值，作为关键码，相同的放到一起，就想到了用哈希表实现。
@@ -144,3 +128,11 @@ map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)�
 > 注意如果p长度大于s，那么一定没有结果，直接返回。
 >
 > 然后记录p数组的字母构成数量。维护一个滑动窗口。当前的字母数量小于0维护左边界。最好当前窗口长度等于p长度时，记录左边界。
+
+## 对比
+
+数组作为哈希表，比如[LC383.赎金信](https://leetcode.cn/problems/ransom-note/)，我们知道明确的数组大小，可以将字母值转化为键值，对比用map，节省了开销。
+
+set作为哈希表，比如[LC349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)， 我们不清楚数组的大小情况，或者值的间隔特别大，会造成空间的浪费。此外数组可以set相比数组还可以去重。
+
+map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)，不仅需要判断key，还要记录位置，将位置作为value记录，
