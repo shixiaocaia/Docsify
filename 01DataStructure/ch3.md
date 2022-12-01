@@ -36,9 +36,9 @@
 
 在C++中，set 和 map 分别提供以下三种数据结构，其底层实现以及优劣如下表所示：
 
-![image-20220813063806405](http://pic.shixiaocaia.fun/202208130638920.png)
+<img src="http://pic.shixiaocaia.fun/202208130638920.png" alt="image-20220813063806405" style="zoom:50%;" />
 
-![image-20220813063940329](http://pic.shixiaocaia.fun/202208130639362.png)
+<img src="http://pic.shixiaocaia.fun/202208130639362.png" alt="image-20220813063940329" style="zoom:50%;" />
 
 当我们要使用集合来解决哈希问题的时候，优先使用unordered_set，因为它的查询和增删效率是最优的；
 
@@ -113,15 +113,19 @@
 > 对比三数之和，增加了一层外循环。
 >
 > - 总体思路：用两层for维护最小的两个数，然后双指针维护后面的部分。
-> - 第一层for：当前数大于目标值时，并且当前数大于等于0，break。外加 if(i > 0 && nums[i] == nums[i-1]) continue;进行剪枝。在这个数和前一个数大于0的情况下，后续有满足的组合，在前一种必然出现过。
-> - 第二层for: 即再上一层基础上初始值时nums[i] + nums[j]进行比较。
+> - 第一层for ：当前数大于目标值时，并且当前数大于等于0，break。外加 if(i > 0 && nums[i] == nums[i-1]) continue;进行剪枝。在这个数和前一个数大于0的情况下，后续有满足的组合，在前一种必然出现过。
+> - 第二层for : 即再上一层基础上初始值时nums[i] + nums[j]进行比较。
 > - 双指针同上一题一样进行维护。
+>
+> 注意数据的溢出。
 >
 > LC15 和18 的剪枝是难点。
 
 [LC49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams/)
 
 > 结合例题的[LC242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)。将一个单词的所有字母进行重新排列得到新的单词，那我们可以将每个单词按照一定顺序排列后的值，作为关键码，相同的放到一起，就想到了用哈希表实现。
+>
+> 区别之前的，这里的value值是vector存放多个string。
 
 [LC438.找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string)
 
@@ -135,4 +139,5 @@
 
 set作为哈希表，比如[LC349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)， 我们不清楚数组的大小情况，或者值的间隔特别大，会造成空间的浪费。此外数组可以set相比数组还可以去重。
 
-map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)，不仅需要判断key，还要记录位置，将位置作为value记录，
+map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)，不仅需要判断key，还要记录位置，将位置作为value记录。
+
