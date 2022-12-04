@@ -36,9 +36,9 @@
 
 在C++中，set 和 map 分别提供以下三种数据结构，其底层实现以及优劣如下表所示：
 
-<img src="http://pic.shixiaocaia.fun/202208130638920.png" alt="image-20220813063806405" style="zoom:50%;" />
+<img src="http://pic.shixiaocaia.fun/202208130638920.png" alt="image-20220813063806405" style="zoom: 67%;" />
 
-<img src="http://pic.shixiaocaia.fun/202208130639362.png" alt="image-20220813063940329" style="zoom:50%;" />
+<img src="http://pic.shixiaocaia.fun/202208130639362.png" alt="image-20220813063940329" style="zoom: 67%;" />
 
 当我们要使用集合来解决哈希问题的时候，优先使用unordered_set，因为它的查询和增删效率是最优的；
 
@@ -126,12 +126,6 @@
 > 结合例题的[LC242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)。将一个单词的所有字母进行重新排列得到新的单词，那我们可以将每个单词按照一定顺序排列后的值，作为关键码，相同的放到一起，就想到了用哈希表实现。
 >
 > 区别之前的，这里的value值是vector存放多个string。
-
-[LC438.找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string)
-
-> 注意如果p长度大于s，那么一定没有结果，直接返回。
->
-> 然后记录p数组的字母构成数量。维护一个滑动窗口。当前的字母数量小于0维护左边界。最好当前窗口长度等于p长度时，记录左边界。
 
 ## 对比
 

@@ -265,6 +265,12 @@ while j < len(nums):
 >
 > 三刷：[题解](https://leetcode.cn/problems/minimum-window-substring/solutions/872360/leetcode-76-zui-xiao-fu-gai-zi-chuan-cja-lmqz/)
 
+[LC438.找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string)
+
+> 注意如果p长度大于s，那么一定没有结果，直接返回。
+>
+> 然后记录p数组的字母构成数量。维护一个滑动窗口。当前的字母数量小于0维护左边界。最好当前窗口长度等于p长度时，记录左边界。
+
 ## 模拟
 
 > [LC59.螺旋矩阵2](https://leetcode.cn/problems/spiral-matrix-ii/)
