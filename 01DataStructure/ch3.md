@@ -135,3 +135,4 @@ set作为哈希表，比如[LC349. 两个数组的交集](https://leetcode.cn/pr
 
 map作为哈希表，[LC1.两数之和](https://leetcode.cn/problems/two-sum/)，不仅需要判断key，还要记录位置，将位置作为value记录。
 
+考虑到去重时
