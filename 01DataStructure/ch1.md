@@ -6,6 +6,8 @@
 
 ## 二分查找
 
+**二分搜索，可以归为两端向中心的双指针。**
+
 ### 思路
 
 **使用前提**
@@ -103,13 +105,25 @@ public:
 >
 > 过去二分相等时返回值，这里二分继续向左或者向右找到相等的值。
 
-## 双向指针
+ **[167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/)**
+
+> 自己写的是二分方法。
+>
+> 可以用双指针，不断收缩左右区间，找到最终的答案。
+>
+> （二分就是左右双指针，相向而行）
+
+## 双指针
 
 > [!NOTE]
 >
+> 双指针主要分为两类：左右指针和快慢指针。
+>
+> 左右指针：两个指针相向而行或者向背而行
+>
+> 快慢指针：两个指针同向而行，一快一慢。
+>
 > 双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。
-
-**例题：**[LC27.移除元素](https://leetcode.cn/problems/remove-element/)
 
 **快慢指针**
 
@@ -160,9 +174,13 @@ public:
 
 **模板题**
 
-> [LC24.删除重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
->
-> [LC27.移除元素](https://leetcode.cn/problems/remove-element/)
+[LC24.删除重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+
+[LC26. 删除有序数组中的重复项](https://leetcode.cn/submissions/detail/387295751/)
+
+[LC83. 删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
+
+[LC27.移除元素](https://leetcode.cn/problems/remove-element/)
 
 [LC283.移动零](https://leetcode.cn/problems/move-zeroes/)
 
