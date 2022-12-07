@@ -10,6 +10,8 @@
 >
 > 更多修改请参考[Docsify中文文档](https://docsify.js.org/#/zh-cn/)。
 >
+> [离线文档/源码](https://github.com/shixiaocaia/Docsify)在这，谁都可以悄悄拿走，记录自己学习和生活，注意标注源作者[MurphyChen](https://docs.mphy.top/#/)哦。
+>
 > 🚧更新变化：
 >
 > - shell、cpp高亮渲染，注意同时引入cpp，c文件，否则无法生效。
