@@ -24,7 +24,7 @@
 
 博客主要记录个人生活，与主要的学习笔记分开记录，在互联网上开辟自己一片空间嘟嘟自己情绪和想法。欢迎大家来成为赛博邻居。
 
-Stay foolish, Stay hungry.
+*The Universe Responds To Your Frequency*
 
 ---
 
@@ -54,8 +54,6 @@ Stay foolish, Stay hungry.
     <label for="file">度过研一课程：</label>
     <progress max="100" value="33"></progress>
 </p>
-
-
 ---
 
 🗓️规划
