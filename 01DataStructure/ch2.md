@@ -141,7 +141,15 @@ ListNod* head = new ListNode(5);
 > 1. 判断是否有环形
 > 2. 判断环形的入口
 
-## 归纳总结
+### 双指针的应用
+
+[21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
+
+> 简单的双指针问题，比较大小插入。
+
+
+
+## ![image-20221207105246154](D:\Code\Typorapic\image-20221207105246154.png)
 
 - 链表的例题第一遍都是参考的思路，涉及指针的操作，是过去不熟悉的，需要多次复习。
 - 增加**哑节点**可以使得处理头节点像其他非头节点情况下。
