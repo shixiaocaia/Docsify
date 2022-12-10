@@ -24,6 +24,12 @@ deque是一个双向队列，只要封住一段，只开通另一端就可以实
 
 SGI STL中 队列底层实现缺省情况下一样使用deque实现的。
 
+## 优先级队列（二叉堆）
+
+[23. 合并K个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/description/)
+
+
+
 ## 例题
 
 **[232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)**

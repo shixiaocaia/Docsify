@@ -125,6 +125,8 @@ ListNod* head = new ListNode(5);
 > 同样用哑节点，规避了分类头节点问题。
 >
 > 二刷没想到双指针用法。
+>
+> **实现了单次遍历链表**
 
 **[面试题 02.07. 链表相交](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)**
 
@@ -133,6 +135,8 @@ ListNod* head = new ListNode(5);
 > 开始遍历较长的链表（默认A，比较后交换），当二者指针相同相等时，找到了相交节点返回，否则返回NULL。
 >
 > 注意判断交点是**指针相等**，不是数值相等。
+>
+> 同样可以窗帘两个链表，直到相交点，否则返回时NULL。
 
 **[🆙LC142.环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/)**
 
@@ -147,9 +151,15 @@ ListNod* head = new ListNode(5);
 
 > 简单的双指针问题，比较大小插入。
 
+[86. 分隔链表](https://leetcode.cn/problems/partition-list/description/)
 
+> 建立两个单链表，分别存放大于等于和小于的节点值，然后合并两个节点。
 
-## ![image-20221207105246154](D:\Code\Typorapic\image-20221207105246154.png)
+[876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/description/)
+
+> 如果链表长度为n，那么中间点为n/2位置，可以联想到LC 19题，实现单次遍历，不用先计算长度再取中间值的情况。
+
+## 总结
 
 - 链表的例题第一遍都是参考的思路，涉及指针的操作，是过去不熟悉的，需要多次复习。
 - 增加**哑节点**可以使得处理头节点像其他非头节点情况下。
