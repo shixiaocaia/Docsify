@@ -32,7 +32,7 @@
 
 <p>
     <label for="file">C++ primer：</label>
-    <progress max="790" value="500"></progress>
+    <progress max="790" value="516"></progress>
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
@@ -54,6 +54,7 @@
     <label for="file">度过研一课程：</label>
     <progress max="100" value="33"></progress>
 </p>
+
 
 ---
 
