@@ -14,6 +14,8 @@
 - 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
 - 它的左、右子树也分别为二叉排序树。
 
+> 这带来了一个重要性质，BST的中序遍历是有序的。
+
 **平衡二叉搜索树**
 
 平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。
@@ -254,7 +256,7 @@ public:
 
 > 这题一开始我就按照上面的思路写了一遍，但是忽略了本地中的定义，最小深度是从根节点到最小的叶子节点的最短路径上的节点数量。
 >
-> 所以当某个节点的左节点为空时不代表子树的高度就是1，应该分三类讨论：左节点为空，右节点不为空时为1+ lenr，同理 1 + lenl，如果都不为空时才是 1 + min( lenr, lenl)
+> 所以当某个节点的左节点为空时不代表子树的高度就是1，应该分三类讨论：左节点为空，右节点不为空时为1+ lenr，同理 1 + lenl，如果都不为空时才是 1 + min( lenr, lenl)。
 
 **[222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)**
 
@@ -303,14 +305,6 @@ public:
 **[700.二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
 
 > 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了。
-
-**[98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)**
-
-> 一刷错在，左子树上每一个点都是小于根节点上的值，右子树上每一个点都是大于根节点上的值。
->
-> 关键一个知识点：二叉搜索树的中序遍历是一个有序序列。
->
-> 二刷没问题。
 
 **[530. 二叉搜索树的最小绝对差](https://leetcode.cn/problems/minimum-absolute-difference-in-bst/)**
 
@@ -361,11 +355,9 @@ public:
 
 > Link到106如何构造一棵二叉树。
 
-**[538. 把二叉搜索树转换为累加树](https://leetcode.cn/problems/convert-bst-to-greater-tree/)**
+**[652. 寻找重复的子树](https://leetcode.cn/problems/find-duplicate-subtrees/description/)**
 
-> 能想到用中序遍历转换为有序序列求值，但是没有想到如何处理，实际上反中序遍历，然后添加值即可。
->
-> 加一个pre记录前置值。
+> 判断重复值，想到了哈希表（map），遍历序列，发现子树是否重复出现，==2也避免重复放入答案。
 
 ### 构造二叉树
 
@@ -377,7 +369,7 @@ public:
 
 > 这两题在优化上，注意类似用数组构造二叉树的题目，每次分隔尽量不要定义新的数组，而是通过下标索引直接在原数组上操作，这样可以节约时间和空间上的开销。
 
-**[105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)**
+**[105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)**
 
 > 如何通过两个遍历数组，分割数组，从而构造函数。
 
@@ -390,7 +382,7 @@ public:
 > 后序遍历除去根节点以后，剩余的部分，我们可以根据上面已经划分好的左子树序列长度和右子树序列长度，然后将后序遍历的数组划分为左子树和右子树。然后继续划分左子树部分和右子树部分，当作根节点。
 >
 
-**[889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/description/)**
+**[889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)**
 
 > if(startp == endp)跳出。这里还是有一点晕。
 >
@@ -400,13 +392,24 @@ public:
 >
 > 想换个思路做这种题。
 
-### 序列化
-
-
-
-### 后序篇
-
-
-
 ### 归并排序
 
+### BST
+
+**[230. 二叉搜索树中第K小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/)**
+
+> 在有size的时候，可以通过比较每个元素的排名，用log时间，类似二分来更快找到第k小的数。
+
+**[538. 把二叉搜索树转换为累加树](https://leetcode.cn/problems/convert-bst-to-greater-tree/)**
+
+> 能想到用中序遍历转换为有序序列求值，但是没有想到如何处理，实际上反中序遍历，然后添加值即可。
+>
+> 加一个pre记录前置值。
+
+**[98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)**
+
+> 一刷错在，左子树上每一个点都是小于根节点上的值，右子树上每一个点都是大于根节点上的值。
+>
+> 关键一个知识点：二叉搜索树的中序遍历是一个有序序列。
+>
+> 二刷没问题。

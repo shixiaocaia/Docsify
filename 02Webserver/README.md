@@ -27,6 +27,8 @@ q: 不保存文件并退出vi 编辑
 
 touch a.txt 创建一个txt文档
 man 2/3   查看手册
+
+ifconfig #查IP地址
 ```
 
 ```shell
