@@ -1,13 +1,13 @@
 ## 常用网站
-|     名称     |                       🔗                        |
-| :----------: | :--------------------------------------------: |
-| 专利文章下载 | https://www.drugfuture.com/cnpat/cn_patent.asp |
-|  Z-Library   |                     被查了                     |
-|   文章纠错   |          https://effidit.qq.com/demo           |
-|   阿里icon   |            https://www.iconfont.cn/            |
-|   飞书妙记   |     https://www.feishu.cn/product/minutes      |
-|   Overleaf   |            https://cn.overleaf.com/            |
-|              |                                                |
+|      名称      |                       🔗                        |
+| :------------: | :--------------------------------------------: |
+|  专利文章下载  | https://www.drugfuture.com/cnpat/cn_patent.asp |
+| Anna's Archive |           https://annas-archive.org/           |
+|    文章纠错    |          https://effidit.qq.com/demo           |
+|    阿里icon    |            https://www.iconfont.cn/            |
+|    飞书妙记    |     https://www.feishu.cn/product/minutes      |
+|    Overleaf    |            https://cn.overleaf.com/            |
+|   CS自学指南   |              https://csdiy.wiki/               |
 
 ## 常用软件
 |       名称       |       作用       |

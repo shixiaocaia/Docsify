@@ -1,5 +1,7 @@
 ## 二叉树理论基础
 
+>  **叶子节点：**当前节点不为空，左右节点都为空的节点。
+
 **完全二叉树**
 
 在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2^(h-1)  个节点。
@@ -31,6 +33,10 @@
 > 无论使用哪种思维模式，你都需要思考：
 >
 > **如果单独抽出一个二叉树节点，它需要做什么事情？需要在什么时候（前/中/后序位置）做**？其他的节点不用你操心，递归函数会帮你在所有节点上执行相同的操作。
+
+> 1. 递归的参数，返回值
+> 2. 终止条件
+> 3. 单层的递归操作
 
 ## 前、中、后、层序遍历
 
@@ -261,10 +267,14 @@ public:
 **[222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)**
 
 > 模板题。
+>
+> 递归搜索即可。
 
 **[110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)**
 
-> 第一遍，遍历每个节点，判断每一棵子树是否是平衡二叉树。
+> 遍历每个节点，判断每一棵子树是否是平衡二叉树，单独计算左右子树的高度。
+>
+> 要重做。
 
 **[257. 二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/)**
 
@@ -301,10 +311,6 @@ public:
 **[617. 合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/)**
 
 > 暴力合并，细分节点的情况。
-
-**[700.二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
-
-> 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了。
 
 **[530. 二叉搜索树的最小绝对差](https://leetcode.cn/problems/minimum-absolute-difference-in-bst/)**
 
@@ -413,3 +419,8 @@ public:
 > 关键一个知识点：二叉搜索树的中序遍历是一个有序序列。
 >
 > 二刷没问题。
+
+**[700.二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)**
+
+> 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了。
+
