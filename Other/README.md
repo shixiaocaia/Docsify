@@ -8,6 +8,8 @@
 |    飞书妙记    |     https://www.feishu.cn/product/minutes      |
 |    Overleaf    |            https://cn.overleaf.com/            |
 |   CS自学指南   |              https://csdiy.wiki/               |
+|     AMiner     |             https://www.aminer.cn/             |
+|                |                                                |
 
 ## 常用软件
 |       名称       |       作用       |
