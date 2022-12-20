@@ -36,11 +36,11 @@
 </p>
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="11" value="4"></progress>
+    <progress max="11" value="5"></progress>
 </p>
 <p>
-    <label for="file">现代操作系统：</label>
-    <progress max="243" value="40"></progress>
+    <label for="file">CSAPP：</label>
+    <progress max="100" value="1"></progress>
 </p>
 <p>
     <label for="file">图解TCP IP：</label>
@@ -48,13 +48,16 @@
 </p>
 <p>
     <label for="file">Webserver：</label>
-    <progress max="100" value="40"></progress>
+    <progress max="100" value="42"></progress>
 </p>
 <p>
     <label for="file">度过研一课程：</label>
-    <progress max="100" value="33"></progress>
+    <progress max="100" value="40"></progress>
 </p>
-
+<p>
+    <label for="file">English Speaking：</label>
+    <progress max="100" value="30"></progress>
+</p>
 
 ---
 
