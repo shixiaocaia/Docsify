@@ -1,6 +1,5 @@
 * **清单**
   * [趁手工具](Other/README)
-  * [markdown](Other/markdown)
   * [愿望清单](Other/todolist)
 * **CS课程**
   * [C++](00C++/README)
@@ -9,7 +8,6 @@
   * [计算机网络](01ComputerNetwork/README)
   * [操作系统](01OperatingSystem/README)
   * [计算机组成原理](01ComputerComposition/README)
-  * [八股文](02Complex/README)
 * **深度学习**
   * [基于Python的理论与实现](00DeepLearning/README)
 * **项目**
