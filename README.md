@@ -10,14 +10,15 @@
 >
 > 更多修改请参考[Docsify中文文档](https://docsify.js.org/#/zh-cn/)。
 >
-> [离线文档/源码](https://github.com/shixiaocaia/Docsify)在这，谁都可以悄悄拿走，记录自己学习和生活，注意标注源作者[MurphyChen](https://docs.mphy.top/#/)哦。
->
-> 🚧更新变化：
->
-> - shell、cpp高亮渲染，注意同时引入cpp，c文件，否则无法生效。
-> - 为了正常使用search功能，将所有笔记文件放在根目录中，避免`Note/C++/ch01`这样的形式，应该限制了范围。
-> - 解决了图片缩放问题`![网络通信的过程](http://pic.shixiaocaia.fun/202212101426713.png ':size=70%')`，加入`':size=70%'`，这样缩放，不会影响fancybox。
+> [离线文档/源码](https://github.com/shixiaocaia/Docsify)在这，都可以悄悄拿走，记录自己学习和生活，注意标注源作者[MurphyChen](https://docs.mphy.top/#/)哦
 
+<details> <summary>🚧更新变化</summary>  
+
+- shell、cpp高亮渲染，注意同时引入cpp，c文件，否则无法生效。
+- 为了正常使用search功能，将所有笔记文件放在根目录中，避免Note/C++/ch01这样的形式，应该限制了范围。
+- 解决了图片缩放问题![网络通信的过程](http://pic.shixiaocaia.fun/202212101426713.png ':size=70%')，加入':size=70%'，这样缩放，不会影响fancybox。
+
+</details>
 
 ---
 
