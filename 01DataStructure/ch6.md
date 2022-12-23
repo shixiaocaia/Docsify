@@ -224,6 +224,8 @@ public:
 
 ## 例题
 
+### 一般树的遍历
+
 **[226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)**
 
 > 模板题。
@@ -298,22 +300,6 @@ public:
 
 > 暴力合并，细分节点的情况。
 
-**[530. 二叉搜索树的最小绝对差](https://leetcode.cn/problems/minimum-absolute-difference-in-bst/)**
-
-> 前提又是二叉搜索树，那么模仿上一题我们同样可以知道，最小的插值肯定连续的两个数，中序一遍序列然后遍历即可。
->
-> result初始值可以设置为` INT_MAX`。
-
-**[501. 二叉搜索树中的众数](https://leetcode.cn/problems/find-mode-in-binary-search-tree/)**
-
-> 暴力遍历。
->
-> 考虑中序遍历的有序性，相同的数连续出现，那我们可以用一个pre记录前驱节点，来判断相同count++，否则判断和前面的大小关系，比前面的大前面的答案都失效了，相同的众数可以放进去。
->
-> 与前置变量相关的，考虑使用一个中间变量。
->
-> 直接遍历出数组，依次判断。
-
 **[🆙236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)**
 
 > 最近遇到的难题。
@@ -322,36 +308,11 @@ public:
 >
 > 如果从左子树找，右子树找都找到了，那么当前的节点肯定是最近的公共祖先。
 
-**[🆙235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)**
-
-> 二叉搜索树是上面的一种，同样可以直接遍历到底。
->
-> 如何利用二叉搜索树的特性：在答案肯定存在的前提下，且节点有序，那么可以从上向下查找。
->
-> 如果当前的值大于二者，那么肯定在左节点，如果小于二者肯定都在右节点。否则就是找到了节点了，因为root->val 在[ p , q ]之间的话，p，q肯定在这之下。
-
-**[701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/)**
-> 找到空节点插入即可。
-
-**[669. 修剪二叉搜索树](https://leetcode.cn/problems/trim-a-binary-search-tree/)**
-
-> 重做。
->
-> 二刷：还是没做出来。
->
-> 递归三要素，一遇到空节点我们返回值，二单层的递归逻辑是当前的值小于low，那只能去右节点找一个合适的节点放入当前的位置（二叉搜索树，右子树更小），如果大于high，那么去左子树找一个合适的节点放入。
->
-> 接下来要将下一层处理完左子树的结果赋给root->left，处理完右子树的结果赋给root->right。
->
-> 最后返回root节点。
-
-**[108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)**
-
-> Link到106如何构造一棵二叉树。
-
 **[652. 寻找重复的子树](https://leetcode.cn/problems/find-duplicate-subtrees/description/)**
 
-> 判断重复值，想到了哈希表（map），遍历序列，发现子树是否重复出现，==2也避免重复放入答案。
+> 判断重复值，想到了哈希表（map），遍历序列，发现子树是否重复出现。
+>
+> ==2 也避免重复放入答案。
 
 ### 构造二叉树
 
@@ -388,6 +349,8 @@ public:
 
 ### 归并排序
 
+待做。
+
 ### BST
 
 **[230. 二叉搜索树中第K小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/)**
@@ -412,3 +375,48 @@ public:
 
 > 注意题目中二叉搜索树这个条件，说明他已经是一个有序树了。
 
+**[530. 二叉搜索树的最小绝对差](https://leetcode.cn/problems/minimum-absolute-difference-in-bst/)**
+
+> 前提又是二叉搜索树，那么模仿上一题我们同样可以知道，最小的插值肯定连续的两个数，中序一遍序列然后遍历即可。
+>
+> result初始值可以设置为` INT_MAX`。
+
+**[501. 二叉搜索树中的众数](https://leetcode.cn/problems/find-mode-in-binary-search-tree/)**
+
+> 暴力遍历。
+>
+> 考虑中序遍历的有序性，相同的数连续出现，那我们可以用一个pre记录前驱节点，来判断相同count++，否则判断和前面的大小关系，比前面的大前面的答案都失效了，相同的众数可以放进去。
+>
+> 与前置变量相关的，考虑使用一个中间变量。
+>
+> 直接遍历出数组，依次判断。
+
+**[🆙235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)**
+
+> 二叉搜索树是上面的一种，同样可以直接遍历到底。
+>
+> 如何利用二叉搜索树的特性：在答案肯定存在的前提下，且节点有序，那么可以从上向下查找。
+>
+> 如果当前的值大于二者，那么肯定在左节点，如果小于二者肯定都在右节点。否则就是找到了节点了，因为root->val 在[ p , q ]之间的话，p，q肯定在这之下。
+
+**[701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/)**
+
+> 找到空节点插入即可。
+
+**[🆙669. 修剪二叉搜索树](https://leetcode.cn/problems/trim-a-binary-search-tree/)**
+
+> 重做。
+>
+> 二刷：还是没做出来。
+>
+> 递归三要素，一遇到空节点我们返回值，二单层的递归逻辑是当前的值小于low，那只能去右节点找一个合适的节点放入当前的位置（二叉搜索树，右子树更小），如果大于high，那么去左子树找一个合适的节点放入。
+>
+> 接下来要将下一层处理完左子树的结果赋给root->left，处理完右子树的结果赋给root->right。
+>
+> 最后返回root节点。
+
+**[🆙108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)**
+
+> Link到106如何构造一棵二叉树。
+>
+> 题目给的nums实际上是数组的中序遍历结果，那么就可以从中间划分，取中间点作为根节点，左边剩余数组构造左子树，右边剩余数组构造右子树。
