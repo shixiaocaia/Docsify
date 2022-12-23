@@ -128,6 +128,15 @@
           namespace: 'docsify-demo'
         },
         plugins: [
+          function (hook) {
+            var footer = [
+            ].join('')
+
+            hook.afterEach(function (html) {
+              return html + footer
+            })
+          }
+        ],
         'flexible-alerts': {
           style: 'flat'
         },
