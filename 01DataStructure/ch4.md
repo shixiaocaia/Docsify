@@ -11,7 +11,26 @@
 
 用一个前缀表`next`，当发现字符不匹配时，跳转至前面已经匹配的**最长前后缀**位置，而不用重新开始匹配，最坏情况是重头开始匹配字符串。
 
+### 如何求next数组
 
+```cpp
+void getnext(vector<int>& next, string& needle){
+    int j = -1;
+    next[0] = j;
+    for(int i = 1; i < needle.size(); i++){
+        while(j >= 0 && needle[i] != needle[j + 1]){ //字符不匹配
+            j = next[j];
+        }
+
+        if(needle[i] == needle[j + 1]){ //字符匹配时
+            j++;
+        }
+        next[i] = j;
+    }
+}
+```
+
+> 从-1下标开始只是标记的手段。
 
 ## 例题
 
