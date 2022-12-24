@@ -9,6 +9,10 @@
 
 ## KMP
 
+用一个前缀表`next`，当发现字符不匹配时，跳转至前面已经匹配的**最长前后缀**位置，而不用重新开始匹配，最坏情况是重头开始匹配字符串。
+
+
+
 ## 例题
 
 [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)
@@ -24,6 +28,7 @@
 >    若a\^b=c,则c\^b=a,c\^a=b
 >
 >    可通过穷举法进行证明
+>    
 >    ![img](http://pic.shixiaocaia.fun/202209042108856.gif)
 >
 >    那么就可以通过以下方式进行两个变量的交换
@@ -56,3 +61,9 @@
 [459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern/)
 
 > 暴力遍历：截取字串，由于必须有2个以上的子串构成，因此字串长度一定小于等于size/2。判断子串是否和前部分字串相等，满足一种情况时即可，遍历完所有情况找不到时，即错误。
+
+[28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+
+> 用KMP匹配。
+>
+> 当模式串到末尾时，返回`i - size + 1`即为起始坐标。
