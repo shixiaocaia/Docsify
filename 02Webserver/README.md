@@ -6,8 +6,6 @@
 
 [Linux高并发服务器开发](https://www.nowcoder.com/courses/cover/live/504)
 
-
-
 **Linux shell常用命令**
 
 ```shell
@@ -29,6 +27,12 @@ touch a.txt 创建一个txt文档
 man 2/3   查看手册
 
 ifconfig #查IP地址
+
+# 查看查用的网络信息
+netstat
+	-a 所有的socket
+	-p 显示正在使用IP地址，而不通过域名服务器
+	-n 直接使用IP地址，而不通过域名服务器
 ```
 
 ```shell
