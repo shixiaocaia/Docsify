@@ -1,6 +1,7 @@
 * **清单**
   * [趁手工具](Other/README)
-  * [愿望清单](Other/todolist)
+  * [百事可乐](Other/todolist)
+  * [技能点](Other/skilltree)
 * **CS课程**
   * [八股](01Complex/README)
   * [C++](00C++/README)
@@ -8,8 +9,6 @@
   * [数据结构与算法](01DataStructure/README)
   * [计算机网络](01ComputerNetwork/README)
   * [操作系统](01OperatingSystem/README)
-  * [计算机组成原理](01ComputerComposition/README)
-
 * **深度学习**
   * [基于Python的理论与实现](00DeepLearning/README)
 * **项目**
