@@ -48,7 +48,7 @@
 </p>
 <p>
     <label for="file">CSAPP：</label>
-    <progress max="100" value="1"></progress>
+    <progress max="9" value="1"></progress>
 </p>
 <p>
     <label for="file">图解TCP IP：</label>
@@ -56,7 +56,7 @@
 </p>
 <p>
     <label for="file">Webserver：</label>
-    <progress max="100" value="42"></progress>
+    <progress max="100" value="50"></progress>
 </p>
 <p>
     <label for="file">度过研一课程：</label>
@@ -66,6 +66,7 @@
     <label for="file">English Speaking：</label>
     <progress max="100" value="30"></progress>
 </p>
+
 
 
 
