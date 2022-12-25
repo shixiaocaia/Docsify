@@ -39,20 +39,12 @@
 🍳最近在做点什么呢
 
 <p>
-    <label for="file">C++ primer：</label>
-    <progress max="790" value="516"></progress>
-</p>
-<p>
     <label for="file">代码随想录二刷：</label>
     <progress max="11" value="5"></progress>
 </p>
 <p>
     <label for="file">CSAPP：</label>
     <progress max="9" value="1"></progress>
-</p>
-<p>
-    <label for="file">图解TCP IP：</label>
-    <progress max="329" value="40"></progress>
 </p>
 <p>
     <label for="file">Webserver：</label>

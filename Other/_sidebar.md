@@ -1,11 +1,9 @@
 * 软件使用笔记
   
     * [好使的工具](Other/README)
-    * [Git](Other/git)
 * 人生清单
 
     * [技能树](Other/skilltree)
-    * [想做的一百件事](Other/todolist)
-    * [天天炫饭](Other/daydayeat)
+    * [百事可乐](Other/todolist)
     
 

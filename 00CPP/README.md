@@ -1,6 +1,8 @@
 ## 参考书籍
 
-⬜C++ primer 第五版
+C++ primer 第五版 
+
+- ✅ 完成到13章
 
 ⬜Effective C++
 

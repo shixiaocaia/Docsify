@@ -124,6 +124,10 @@ Docker/Grafana...
 
 ## C++工作方向
 
+**JD**：Job description
+
+**SP、SSP**：sp全称为“special offer”，所以SP是优质生源优先推荐的意思。sp是更高级的offer。
+
 ### 公司
 
 腾讯

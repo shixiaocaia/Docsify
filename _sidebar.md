@@ -3,8 +3,6 @@
   * [百事可乐](Other/todolist)
   * [技能点](Other/skilltree)
 * **CS课程**
-  * [八股](01Complex/README)
-  * [C++](00C++/README)
   * [CPP](00CPP/README)
   * [数据结构与算法](01DataStructure/README)
   * [计算机网络](01ComputerNetwork/README)
