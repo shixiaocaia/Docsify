@@ -18,5 +18,7 @@ C++ primer 第五版
 
 ⬜侯捷 C++ 11
 
+⬜侯捷 内存管理与分析
+
 ⬜[阿布编程](https://space.bilibili.com/261582436/channel/collectiondetail?sid=59030)
 

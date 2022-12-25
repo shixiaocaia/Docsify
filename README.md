@@ -1,7 +1,5 @@
 # XIAOCAI's Notes
 
-*今天有变更立体一点吗*
-
 📪 简介
 
 👋，这里是小蔡的个人笔记站点，用于记录读研期间乃至以后工作中学习的内容，定期自我复盘。
@@ -25,6 +23,8 @@
 > 解决了图片缩放问题`![](http://abc/2022.png ':size=70%')`，加入`':size=70%'`，这样缩放，不会影响fancybox。
 
 </details>
+
+*今天有变更立体一点吗*
 
 ---
 
@@ -58,7 +58,6 @@
     <label for="file">English Speaking：</label>
     <progress max="100" value="30"></progress>
 </p>
-
 
 
 
