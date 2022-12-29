@@ -44,7 +44,7 @@
 </p>
 <p>
     <label for="file">CSAPP：</label>
-    <progress max="9" value="1"></progress>
+    <progress max="43" value="8"></progress>
 </p>
 <p>
     <label for="file">Webserver：</label>

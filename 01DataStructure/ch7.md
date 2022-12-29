@@ -11,10 +11,18 @@
 **回溯搜索的遍历过程**
 
 ```cpp
-for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
-    处理节点;
-    backtracking(路径，选择列表); // 递归
-    回溯，撤销处理结果
+void dfs(XXX, int index){
+    if(){
+        加入答案；
+        return;
+    }
+    
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        if(...) 去重;
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }    
 }
 ```
 
@@ -46,7 +54,7 @@ for (选择：本层集合中元素（树中节点孩子的数量就是集合的
 
 > 在写这题的时候，纠结出现重复的情况，实际上就是下一个寻址的起始位置，仍然包含本身，可以重复拿。
 
-**[40. 组合总和 II](https://leetcode.cn/problems/combination-sum-ii/)**
+**[🆙40. 组合总和 II](https://leetcode.cn/problems/combination-sum-ii/)**
 
 > 对比上题，这题每个数只能使用一次了，但不是这么简单。
 >
@@ -54,13 +62,12 @@ for (选择：本层集合中元素（树中节点孩子的数量就是集合的
 >
 > 因此本题的重点在于去重，一开始我考虑了candidates[i] == candidates[i - 1] ，如果这个数和上次放入一样跳过，那么1 1 6就会被排除，看了题解一句话，我们要去重的是同层的遍历相同的数字情况，比如，我 1 2（第一个2）遍历，和 1 2（第二个2）开始遍历，就是重复的，但是1 2 2这种是可以的，因此要加一个判断当前位置是不是新的一层的开头。
 
-**[131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)**
+**[🆙131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)**
 
 > 分割字符串，如果当前子串是回文串就进行下一层遍历，否则继续截取更长的子串长度。
 
-**[93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)**
->重做
->
+**[🆙93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)**
+
 >stoi(  )函数，头文件：#include<cstring> 把数字字符串转换成int输出。
 >
 >字串截取，每次处理完，也把s截取为处理完的字符串。
@@ -79,7 +86,7 @@ for (选择：本层集合中元素（树中节点孩子的数量就是集合的
 
 > remake
 >
-> 第一篇卡在了去重。
+> 第一遍卡在了去重。
 >
 > 随想录思路：先处理continue的条件，加上unset去重。
 
