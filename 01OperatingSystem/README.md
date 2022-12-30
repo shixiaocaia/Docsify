@@ -4,6 +4,8 @@
 
 ⬜[小林图解系统](https://xiaolincoding.com/os/)
 
+⬜[CSAPP重点解读](https://fengmuzi2003.gitbook.io/csapp3e/)
+
 ⬜[哈工大李治军操作系统原理视频](https://www.bilibili.com/video/BV1d4411v7u7/?vd_source=98edb319e59affabde4d9cb2731826cd)
 
 ⬜[南京大学袁春风老师计算机系统基础](https://www.icourse163.org/learn/NJU-1001625001?tid=1468213529#/learn/announce)
@@ -11,8 +13,6 @@
 ⬜[九曲阑干](https://space.bilibili.com/354767108/)
 
 ⬜[蒋炎岩](https://space.bilibili.com/202224425/video)
-
-⬜[yaangmin](https://space.bilibili.com/4564101/video?tid=0&page=3&keyword=&order=pubdate)
 
 ### Experiment
 
@@ -28,9 +28,9 @@
 
 ⬜[小林图解系统](https://xiaolincoding.com/os/)
 
-⬜[CSAPP重点解读博客](https://fengmuzi2003.gitbook.io/csapp3e/)
+## 知轻重
 
-⬜[小土刀博客](https://wdxtub.com/work/)
+⬜死锁、虚拟内存、堆栈、进程线程、内存管理、磁盘调度
 
-**学习顺序：**内存管理 -> 进程管理 -> ⽂件系统管理 -> 输入输出设备管理
+
 
