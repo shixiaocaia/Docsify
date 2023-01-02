@@ -40,11 +40,11 @@
 
 <p>
     <label for="file">代码随想录二刷：</label>
-    <progress max="11" value="6"></progress>
+    <progress max="11" value="8"></progress>
 </p>
 <p>
     <label for="file">CSAPP：</label>
-    <progress max="43" value="8"></progress>
+    <progress max="43" value="10"></progress>
 </p>
 <p>
     <label for="file">Webserver：</label>
