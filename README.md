@@ -14,7 +14,7 @@
 
 </details>
 
-
+<br />
 
 <details> <summary>🚧更新变化</summary>  
 
@@ -43,16 +43,20 @@
     <progress max="11" value="8"></progress>
 </p>
 <p>
+    <label for="file">LC hot 100：</label>
+    <progress max="100" value="5"></progress>
+</p>
+<p>
     <label for="file">CSAPP：</label>
-    <progress max="43" value="10"></progress>
+    <progress max="43" value="12"></progress>
 </p>
 <p>
     <label for="file">Webserver：</label>
-    <progress max="100" value="60"></progress>
+    <progress max="100" value="70"></progress>
 </p>
 <p>
     <label for="file">度过研一课程：</label>
-    <progress max="100" value="40"></progress>
+    <progress max="30" value="16"></progress>
 </p>
 <p>
     <label for="file">English Speaking：</label>
