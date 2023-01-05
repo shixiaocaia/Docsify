@@ -98,3 +98,11 @@ priority_queue< Node,vector< Node >,cmp > Q;
 >
 > 最后遍历队列中剩余元素即可。
 
+[215. 数组中的第K个最大元素](https://leetcode.cn/problems/kth-largest-element-in-an-array/description/)
+
+> 返回第k大的元素。
+>
+> 维护一个大顶堆（父节点是最大值），栈中超过k个元素就弹出最小的值，最后返回栈顶即可。
+>
+> 做法2：快速选择。
+

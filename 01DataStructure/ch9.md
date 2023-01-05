@@ -323,7 +323,11 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 
 **[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)**
 
-> 重刷。思考01背包思路
+> 两个数组和相等，转换为能分成两个相等的值，如果能找到一个背包存放的价值等于容量，即可。
+>
+> 这里物品的价值和占用体积是一个数值。
+>
+> 剪枝：如果这个数组的总和为奇数，那么必然无法平分为两个相等的值。
 
 **[1049. 最后一块石头的重量 II](https://leetcode.cn/problems/last-stone-weight-ii/)**
 
@@ -331,11 +335,13 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >
 > 最后一块石头的重量：从一堆石头中,每次拿两块重量分别为x,y的石头,若x=y,则两块石头均粉碎;若x<y,两块石头变为一块重量为y-x的石头求最后剩下石头的最小重量(若没有剩下返回0)
 >
-> 问题转化为：把一堆石头分成两堆,求两堆石头重量差最小值
+> 问题转化为：把一堆石头分成两堆,求两堆石头重量差最小值。
 >
-> 进一步分析：要让差值小,两堆石头的重量都要接近sum/2;我们假设两堆分别为A,B,A<sum/2,B>sum/2,若A更接近sum/2,B也相应更接近sum/2
+> 进一步分析：要让差值小,两堆石头的重量都要接近sum/2;我们假设两堆分别为A,B,A<sum/2,B>sum/2,若A更接近sum/2,B也相应更接近sum/2。
 >
-> 进一步转化：将一堆stone放进最大容量为sum/2的背包,求放进去的石头的最大重量MaxWeight,最终答案即为sum-2*MaxWeight;
+> 进一步转化：将一堆stone放进最大容量为sum/2的背包,求放进去的石头的最大重量MaxWeight,最终答案即为sum-2*MaxWeight。
+>
+> 所以本题关联416
 
 **[474. 一和零](https://leetcode.cn/problems/ones-and-zeroes/)**
 
