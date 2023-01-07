@@ -36,9 +36,9 @@
 
 在C++中，set 和 map 分别提供以下三种数据结构，其底层实现以及优劣如下表所示：
 
-<img src="http://pic.shixiaocaia.fun/202208130638920.png" alt="image-20220813063806405" style="zoom: 67%;" />
+![](http://pic.shixiaocaia.fun/202208130638920.png 'size = 70%')
 
-<img src="http://pic.shixiaocaia.fun/202208130639362.png" alt="image-20220813063940329" style="zoom: 67%;" />
+![](http://pic.shixiaocaia.fun/202208130639362.png 'size = 70%')
 
 当我们要使用集合来解决哈希问题的时候，优先使用unordered_set，因为它的查询和增删效率是最优的；
 
