@@ -367,9 +367,7 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 
 **[377. 组合总和 Ⅳ](https://leetcode.cn/problems/combination-sum-iv/)**
 
-> 还是一个完全背包问题。
->
-> 注意：外包内物品是排列，外物品内包是组合。排列是注重顺序的，组合是不注重的。
+> 还是一个完全背包问题，是看排列的，因此外背包内物品。
 >
 > C++测试用例有两个数相加超过int的数据，所以需要在if里加上dp[i] < INT_MAX - dp[i - num]。
 >
