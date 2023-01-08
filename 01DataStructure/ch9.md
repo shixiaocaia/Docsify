@@ -4,7 +4,7 @@
 
 所以动态规划中每一个状态一定是由上一个状态推导出来的，**这一点就区分于贪心**，贪心没有状态推导，而是从局部直接选最优的，同时这也是全局最优的。
 
-## 步骤
+### 步骤
 
 1. 确定dp数组（dp table）以及下标的含义
 2. 确定递推公式
@@ -18,7 +18,7 @@
 >
 > DP的题有哪些状态，比如买或者不买，状态怎么转变的。
 
-## 例子-斐波那契数列
+### 例子
 
 1. 确定dp数组（dp table）以及下标的含义
 
@@ -79,9 +79,8 @@ public:
 };
 ```
 
-## 背包问题
 
-### 01背包问题
+## 01背包
 
 **二维数组dp**
 
@@ -201,71 +200,7 @@ int main() {
 }
 ```
 
-### 完全背包
-
-> 有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。**每件物品都有无限个（也就是可以放入背包多次）**，求解将哪些物品装入背包里物品价值总和最大。
->
-> **完全背包和01背包问题唯一不同的地方就是，每种物品有无限件**。
-
-01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。
-
-而完全背包的物品是可以添加多次的，所以要从小到大去遍历。
-
-```cpp
-// 先遍历物品，再遍历背包
-for(int i = 0; i < weight.size(); i++) { // 遍历物品
-    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
-        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
-
-    }
-}
-```
-
-纯背包问题，是看能够凑成这个某个，否则要考虑组合还是排列问题，要注意遍历的顺序。
-
-> **如果求组合数就是外层for循环遍历物品，内层for遍历背包**。
->
-> **如果求排列数就是外层for遍历背包，内层for循环遍历物品**。
-
-### 多重背包
-
-> 有N种物品和一个容量为V 的背包。第i种物品最多有Mi件可用，每件耗费的空间是Ci ，价值是Wi 。求解将哪些物品装入背包可使这些物品的耗费的空间 总和不超过背包容量，且价值总和最大。
-
-把多件物品划分成多个重复的单件物品，就变成了01背包问题。
-
-```cpp
-void test_multi_pack() {
-    vector<int> weight = {1, 3, 4};
-    vector<int> value = {15, 20, 30};
-    vector<int> nums = {2, 3, 2};
-    int bagWeight = 10;
-    for (int i = 0; i < nums.size(); i++) {
-        while (nums[i] > 1) { // nums[i]保留到1，把其他物品都展开
-            weight.push_back(weight[i]);
-            value.push_back(value[i]);
-            nums[i]--;
-        }
-    }
-
-    vector<int> dp(bagWeight + 1, 0);
-    for(int i = 0; i < weight.size(); i++) { // 遍历物品
-        for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
-            dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
-        }
-        for (int j = 0; j <= bagWeight; j++) {
-            cout << dp[j] << " ";
-        }
-        cout << endl;
-    }
-    cout << dp[bagWeight] << endl;
-
-}
-int main() {
-    test_multi_pack();
-}
-```
-
-## 刷题
+### 刷题
 
 **[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)**
 
@@ -355,6 +290,34 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >
 > 背包的遍历都是从后向前更新的。
 
+## 完全背包
+
+> 有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。**每件物品都有无限个（也就是可以放入背包多次）**，求解将哪些物品装入背包里物品价值总和最大。
+>
+> **完全背包和01背包问题唯一不同的地方就是，每种物品有无限件**。
+
+01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。
+
+而完全背包的物品是可以添加多次的，所以要从小到大去遍历。
+
+```cpp
+// 先遍历物品，再遍历背包
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+    }
+}
+```
+
+纯背包问题，是看能够凑成这个某个，否则要考虑组合还是排列问题，要注意遍历的顺序。
+
+> **如果求组合数就是外层for循环遍历物品，内层for遍历背包**。
+>
+> **如果求排列数就是外层for遍历背包，内层for循环遍历物品**。
+
+### 刷题
+
 **[518. 零钱兑换 II](https://leetcode.cn/problems/coin-change-ii/)**
 
 > dp递推式写错了。
@@ -413,7 +376,47 @@ vector<vector<int>> dp(m, vector<int>(n, 0)); // 初始化一个二维数组
 >
 > 4. 确定遍历顺序
 >
-> 题目中说是拆分为一个或多个在字典中出现的单词，所以这是完全背包。这里应该考虑前后组合的顺序，因此应该先遍历背包再遍历物品。
+> 题目中说是拆分为一个或多个在字典中出现的单词，所以这是完全背包。这里应该考虑前后组合的顺序，因此应该先遍历背包再遍历物品，所以a a b和 b a a是不同的，应该当作排列背包容量在外层遍历。
+
+## 多重背包
+
+> 有N种物品和一个容量为V 的背包。第i种物品最多有Mi件可用，每件耗费的空间是Ci ，价值是Wi 。求解将哪些物品装入背包可使这些物品的耗费的空间 总和不超过背包容量，且价值总和最大。
+
+把多件物品划分成多个重复的单件物品，就变成了01背包问题。
+
+```cpp
+void test_multi_pack() {
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+    vector<int> nums = {2, 3, 2};
+    int bagWeight = 10;
+    for (int i = 0; i < nums.size(); i++) {
+        while (nums[i] > 1) { // nums[i]保留到1，把其他物品都展开
+            weight.push_back(weight[i]);
+            value.push_back(value[i]);
+            nums[i]--;
+        }
+    }
+
+    vector<int> dp(bagWeight + 1, 0);
+    for(int i = 0; i < weight.size(); i++) { // 遍历物品
+        for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+        }
+        for (int j = 0; j <= bagWeight; j++) {
+            cout << dp[j] << " ";
+        }
+        cout << endl;
+    }
+    cout << dp[bagWeight] << endl;
+
+}
+int main() {
+    test_multi_pack();
+}
+```
+
+### 刷题
 
 **[198. 打家劫舍](https://leetcode.cn/problems/house-robber/)**
 
