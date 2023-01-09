@@ -4,9 +4,13 @@
 
 ✅[牛客Linux高并发服务器](https://www.nowcoder.com/courses/cover/live/504)：对于每部分主要的函数使用方法介绍，源于游双的书，项目实现后面省略了很多。
 
+✅环境配置
+
 ⬜源码阅读 
 
 ⬜功能增加
+
+**环境配置**
 
 **Linux shell常用命令**
 
