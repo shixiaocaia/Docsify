@@ -10,6 +10,7 @@
 * **深度学习**
   * [基于Python的理论与实现](00DeepLearning/README)
 * **项目**
-  * [环境搭建](02Environment/README)
-  * [Webserver](02Webserver/README)
+  * [各类环境搭建](02Environment/README)
+  * [Webserver相关知识（待删除）](02Webserver/README)
+  * [Webserver实现](02MyWeb/README)
 
