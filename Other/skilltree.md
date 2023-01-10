@@ -47,6 +47,8 @@
 
 ⬜CSAPP
 
+⬜操作系统内核[来自MIT的结课大作业MIT 6.828](https://github.com/woai3c/MIT6.828)
+
 ### 数据库
 
 ⬜MySql必知必会
@@ -54,6 +56,8 @@
 ⬜牛客网刷题
 
 ⬜MySql45讲
+
+⬜B站编程技术宇宙
 
 ### 编译原理
 
@@ -107,6 +111,8 @@ Docker/Grafana...
 > 项目资料多，重心放在技术难点、优化上。
 >
 > [实现文档](https://docsify.shixiaocaia.fun/#/02MyWeb/README)。
+>
+> 补充一个：真的难从0开始搭建自己的服务器框架：https://github.com/sylar-yin/sylar
 <h3>2. STL</h3>
 
 [Github项目](https://github.com/Alinshans/MyTinySTL)
@@ -120,28 +126,3 @@ Docker/Grafana...
 
 星球朋友推荐的内容[链接](https://erdengk.github.io/gsoc-analyse/)
 
-## C++工作方向
-
-**JD**：Job description
-
-**SP、SSP**：sp全称为“special offer”，所以SP是优质生源优先推荐的意思。sp是更高级的offer。
-
-### 公司
-
-腾讯
-
-百度
-
-字节
-
-### 岗位
-
-客户端开发
-
-服务端开发
-
-游戏领域
-
-嵌入式平台
-
-测试开发
