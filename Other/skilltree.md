@@ -87,7 +87,7 @@ Docker/Grafana...
 
 ## 项目准备
 
-**学习思路**
+<h3>学习思路</h3>
 
 > - 为什么做这个项目
 > - 这个项目整体架构是什么样子的
@@ -102,23 +102,21 @@ Docker/Grafana...
 5.  修改部分代码，重新跑项目，看看有哪些变动 
 6.  完成这个项目代码的阅读
 
-**STL**
+<h3>1. WebServer</h3>
+
+> 项目资料多，重心放在技术难点、优化上。
+>
+> [实现文档](https://docsify.shixiaocaia.fun/#/02MyWeb/README)。
+<h3>2. STL</h3>
 
 [Github项目](https://github.com/Alinshans/MyTinySTL)
 
-**WebServer**
 
-> 项目资料多，重心放在技术难点、优化上。
-
-[Github项目](https://github.com/qinguoyi/TinyWebServer)
-
-[牛客网视频教学](https://www.nowcoder.com/courses/cover/live/504)
-
-**手把手教你从零开始实现一个 JSON**
+<h3>3. 手把手教你从零开始实现一个 JSON</h3>
 
 [Github项目](https://github.com/miloyip/json-tutorial)
 
-**参与开源**
+<h3>4. 参与开源</h3>
 
 星球朋友推荐的内容[链接](https://erdengk.github.io/gsoc-analyse/)
 
