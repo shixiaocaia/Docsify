@@ -416,7 +416,7 @@ int main() {
 }
 ```
 
-### 刷题
+## 其他刷题
 
 **[198. 打家劫舍](https://leetcode.cn/problems/house-robber/)**
 
@@ -436,7 +436,7 @@ int main() {
 
 **[337. 打家劫舍 III](https://leetcode.cn/problems/house-robber-iii/)**
 
-> 暴力：后续遍历，分为偷父节点和不偷父节点。
+> 暴力：后续遍历，分为偷父节点和不偷父节点，但是会超时，需要记录已记录的部分，进行剪枝。
 >
 > 树形DP：重刷一下。
 
@@ -454,6 +454,10 @@ int main() {
 **[122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)**
 
 > 和上一题一样，只是递推公式改变。
+>
+> 前者是在找最低买入，最高买入。
+>
+> 这里可以多次买入卖出。
 >
 > `dp[i][0]`持有股票是昨天乃至之前保留的`dp[i-1][0]`，或者是今天新买的`dp[i-1][1]-price[i]`。`dp[i][1]`前一天不持有股票有的钱， 我今天卖掉股票赚的钱`dp[i-1][0] + prices[i]`。都是取最大值。
 
@@ -481,11 +485,13 @@ int main() {
 > dp[0][1] -= prices[0];
 > dp[0][2] = 0;
 > dp[0][3] -= prices[0];
-> // 假设今天买入买出了，那么必然还要再消耗
+> // 假设今天买入买出了，jin'xing
 > dp[0][4] = 0;
 > ```
 >
 > 4. 遍历顺序：从前向后
+>
+> 爹日次写的时候忽略了，第一次买建立在前一天没有动作前提。
 
 **[123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)**
 
