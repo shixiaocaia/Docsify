@@ -4,15 +4,29 @@
 
 ✅[牛客Linux高并发服务器](https://www.nowcoder.com/courses/cover/live/504)：对于每部分主要的函数使用方法介绍，源于游双的书，项目实现后面省略了很多。
 
-✅环境配置
+---
 
-⬜源码阅读 
+项目来源：[TinyWebServer](https://github.com/qinguoyi/TinyWebServer)
+
+✅[环境配置]()：待补
+
+​	⬜CMAKE
+
+源码阅读
+
+​	✅封装类
+
+​	⬜HTTP报文解析
+
+​	⬜定时器
+
+​	⬜日志
+
+​	⬜压力测试
 
 ⬜功能增加
 
-**环境配置**
-
-**Linux shell常用命令**
+<details> <summary>Linux shell常用命令</summary>  
 
 ```shell
 vi 文件： 回车后就进入进入编辑模式，按 o 进行编辑
@@ -47,4 +61,8 @@ int main(argc, char *argv[])
 argc 是命令行总的参数个数
 argv[] 是argc个参数，其中第0个参数是程序的全名，以后的参数命令行后面跟的用户输入的参数
 ```
+
+</details>
+
+
 
