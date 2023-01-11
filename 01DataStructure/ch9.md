@@ -485,15 +485,15 @@ int main() {
 > dp[0][1] -= prices[0];
 > dp[0][2] = 0;
 > dp[0][3] -= prices[0];
-> // 假设今天买入买出了，jin'xing
+> // 假设今天买入买出了，进行第二次购入
 > dp[0][4] = 0;
 > ```
 >
 > 4. 遍历顺序：从前向后
 >
-> 爹日次写的时候忽略了，第一次买建立在前一天没有动作前提。
+> 第二次写的时候忽略了，第一次买建立在前一天没有动作前提。
 
-**[123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)**
+**[123. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)**
 
 > 同上，上一题是k = 2 的特例，最上一题是  k  = 1的特例.
 
